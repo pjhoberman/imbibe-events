@@ -20,6 +20,7 @@ get_header(); ?>
     <div id="primary" class="content-area">
         <div id="content" class="site-content" role="main">
             Event Details page!
+            <?= $event_slug ?>
 
             <?php
                 // Start the Loop.
@@ -34,6 +35,9 @@ get_header(); ?>
                     }
                 endwhile;
             ?>
+
+            Event Details start here.
+            <? include_once($_SERVER['DOCUMENT_ROOT'] . "/wp-content/scripts/nightout.php"); ?>
 
         </div><!-- #content -->
     </div><!-- #primary -->
