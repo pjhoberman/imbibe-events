@@ -81,7 +81,7 @@ function slugToID($slug){
 function getThisEvent($slug){
     $event_ID = slugToID($slug);
     if(!$event_ID) {
-        echo "We couldn't find this event. Please try again.";
+        return false;
     } else {
         return json_decode(file_get_contents(getEventURL($event_ID)));
 
