@@ -34,35 +34,7 @@ get_header(); ?>
                 endwhile;
             ?>
 
-            <style type="text/css">
-            .event_preview {
-                height: 200px;
-                width: 200px;
-                float: left;
-                margin: 15px;
-                overflow: hidden;
-            }
-
-            .event_preview img {
-                max-height: 200px;
-                max-width: 200px;
-            }
-            </style>
-
-            <?php include_once($_SERVER['DOCUMENT_ROOT'] . "/wp-content/scripts/nightout.php"); ?>
-
-            <?php
-                $all_events = getAllEvents();
-                foreach($all_events as $key => $value) {
-                    ?>
-                <div class="event_preview">
-                    <a href="/event/<?= $value -> subdomain ?>">
-                        <img src="<?= $value -> poster_url -> small ?>" />
-                    </a>
-                </div>
-                    <?php
-                } // foreach
-            ?>
+<?php include_once($_SERVER['DOCUMENT_ROOT'] . "/wp-content/scripts/all-events.php"); ?>
 
         </div><!-- #content -->
     </div><!-- #primary -->

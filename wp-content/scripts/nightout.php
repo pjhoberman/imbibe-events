@@ -13,6 +13,7 @@ function getEventURL($id) {
 function getAllEvents() {
     global $api_all_events_url;
     if(!isset($all_events)) {
+        //return $all_events = json_decode(file_get_contents($api_all_events_url));
         return $all_events = json_decode(file_get_contents($api_all_events_url));
     } else {
         return $all_events;
