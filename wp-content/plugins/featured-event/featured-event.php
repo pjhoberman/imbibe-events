@@ -40,10 +40,10 @@ class pu_media_upload_widget extends WP_Widget
     {
         $widget_ops = array(
             'classname' => 'pu_media_upload',
-            'description' => 'Widget that uses the built in Media library.'
+            'description' => 'Widget for showing featured events on the home page'
         );
 
-        parent::__construct( 'pu_media_upload', 'Media Upload Widget', $widget_ops );
+        parent::__construct( 'pu_media_upload', 'Featured Events', $widget_ops );
 
         add_action('admin_enqueue_scripts', array($this, 'upload_scripts'));
         add_action('admin_enqueue_styles', array($this, 'upload_styles'));
