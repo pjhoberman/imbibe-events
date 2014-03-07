@@ -1,4 +1,4 @@
-/* 
+/*
 Theme Name: Responsive Child Theme
 Theme URI: http://cyberchimps.com/guide/child-theme-example/
 Description: Responsive Child Theme
@@ -14,15 +14,295 @@ License URI: license.txt
 /* =Start From Here
 -------------------------------------------------------------- */
 
+/* 4.0.1 - Header Assets -- Custom from PJ */
+#header-logo {
+  background: white url(//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/imbibe-home-966.jpg?1809) top center no-repeat;
+  padding: 0;
+  height: 198px;
+  position: relative;
+  margin: 0 auto 35px;
+}
+
+.header-element {
+  display: block;
+  position: absolute;
+}
+
+#header-imbibe {
+  top: 77px;
+  left: 0;
+  height: 107px;
+  width: 107px;
+}
+
+#header-about {
+  top: 74px;
+  left: 207px;
+  height: 26px;
+  width: 101px;
+}
+
+#header-how {
+  top: 149px;
+  left: 343px;
+  height: 26px;
+  width: 147px;
+}
+
+#header-community {
+  top: 74px;
+  left: 515px;
+  height: 26px;
+  width: 125px;
+}
+
+#header-contact {
+  top: 35px;
+  left: 653px;
+  height: 26px;
+  width: 101px;
+}
+
+#header-facebook {
+  top: 80px;
+  left: 830px;
+  height: 55px;
+  width: 59px;
+}
+
+#header-twitter {
+  top: 25px;
+  left: 910px;
+  height: 80px;
+  width: 54px;
+}
+
+/* 4.1 - Desktop Slim */
+@media only screen and (min-width: 768px) and (max-width: 1026px) {
+  .logo { max-width: 738px; }
+  #header-logo {
+  background: white url(//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Imbibe-Home-738.jpg?1809) top center no-repeat;
+  }
+#header-imbibe {
+  top: 76px;
+  left: 3px;
+}
+
+#header-about {
+  top: 74px;
+  left: 179px;
+}
+
+#header-how {
+  top: 149px;
+  left: 315px;
+}
+
+#header-community {
+  top: 74px;
+  left: 487px;
+}
+
+#header-contact {
+  top: 36px;
+  left: 625px;
+}
+
+#header-facebook {
+  display: none;
+}
+
+#header-twitter {
+  display: none;
+}
+}
+
+/* 4.2 - Tablet Landscape */
+@media only screen and (min-width: 600px) and (max-width: 797px) {
+  #header .span9, #header .span3 { width: 570px; }
+  #header .span9 { margin-left: 0 !important; }
+  #header .logo { padding-bottom: 0 !important; }
+  #header .logo a img { max-width: 200px; }
+  /* .featured img { max-width: 468px !important; } */
+
+  #header-logo {
+  background: white url(//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Imbibe-Home-568.jpg?1809) top center no-repeat;
+}
+  #header-imbibe {
+  top: 76px;
+  left: 6px;
+}
+
+#header-about {
+  top: 74px;
+  left: 143px;
+}
+
+#header-how {
+  top: 149px;
+  left: 218px;
+}
+
+#header-community {
+  top: 74px;
+  left: 338px;
+}
+
+#header-contact {
+  top: 36px;
+  left: 456px;
+}
+
+#header-facebook {
+  display: none;
+}
+
+#header-twitter {
+  display: none;
+}
+}
+
+/* 4.3 - Mobile Landscape */
+@media only screen and (min-width: 510px) and (max-width: 629px) {
+  .logo { max-width: 450px; }
+  #header .span9, #header .span3 { width: 450px; }
+  #header .span9 { margin-left: 0 !important; }
+  #header .logo { padding-bottom: 0 !important; }
+  #header .logo a img { max-width: 200px; }
+  .footer-menu { margin-bottom: 20px; }
+  #product .thumbs .image:nth-child(3n+4) { clear: none; }
+  #product .thumbs .image:nth-child(6n+7) { clear: left; }
+  #product .thumbs .last-in-row { padding-right: 15px; }
+  #product .thumbs .image:nth-child(6n+6) { padding-right: 0; }
+  .featured-product-image { margin-top:10px; }
+
+  #header-logo {
+  background: white url(//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Imbibe-Home-450.jpg?1809) top center no-repeat;
+}
+    #header-imbibe {
+  top: 76px;
+  left: 6px;
+}
+
+#header-about {
+  top: 71px;
+  left: 143px;
+}
+
+#header-how {
+  top: 149px;
+  left: 180px;
+}
+
+#header-community {
+  top: 99px;
+  left: 262px;
+}
+
+#header-contact {
+  top: 36px;
+  left: 333px;
+}
+
+#header-facebook {
+  display: none;
+}
+
+#header-twitter {
+  display: none;
+}
+}
+
+/* 4.4 - Mobile Portrait */
+@media only screen and (max-width: 509px){
+  .logo { padding-bottom:0; }
 
 
+  .logo { max-width: 290px;float:none;padding-bottom:20px; }
+
+  #header-logo {
+  background: white url(//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Imbibe-Home-290.png?1809) top center no-repeat;
+}
+
+      #header-imbibe {
+  top: 75px;
+  left: 5px;
+}
+
+#header-about {
+  top: 74px;
+  left: 142px;
+}
+
+#header-how {
+  top: 149px;
+  left: 118px;
+}
+
+#header-community {
+  top: 112px;
+  left: 130px;
+}
+
+#header-contact {
+  top: 36px;
+  left: 142px;
+}
+
+#header-facebook {
+  display: none;
+}
+
+#header-twitter {
+  display: none;
+}
+}
+
+#logo, .main-nav {
+display: none;
+}
 
 
+.skip-container {display: none;}
+
+.widget-wrapper {
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+background-color: transparent;
+border: none;
+border-radius: 0;
+padding: 0;
+position: relative;
+}
+
+.widget-wrapper img:hover {
+  opacity: .7;
+}
 
 
+  .info-bar {
+    display: none;
+    height: 45px;
+    background-color: black;
+    background-color: rgba(0,0,0,.85);
+    color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-weight: bold;
+  }
+
+  .info-bar span {
+    margin: 12px;
+    display: inline-block;
+
+  }
 
 
-
+  .buy-now, .info {
+    float: right;
+    margin: 5px !important;
+  }
 
 
 

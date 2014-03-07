@@ -80,7 +80,24 @@ class pu_media_upload_widget extends WP_Widget
         // Add any html to output the image in the $instance array
        extract($args, EXTR_SKIP);
        echo $before_widget;
-       echo '<a href="' . $instance['link'] . '"><img src="' . $instance['image'] . '" /></a>';
+
+       ?>
+       <a class="main-link" href="<?= $instance['link'] ?>">
+        <img class="main-image" src="<?= $instance['image'] ?>"/>
+      </a>
+      <div class="info-bar">
+          <span class="title"><?= $instance['title'] ?></span>
+          <?php if ($instance['buy_now_link'] === 1) { ?>
+          <a class="buy-now" title="Buy Now" href="<?= $instance['link'] ?>">
+            <img src="http://cdn.shopify.com/s/files/1/0247/3455/t/1/assets/buynow.png?1825" />
+        </a>
+        <?php } ?>
+
+        <a class="info" title="More Info" href="<?= $instance['link'] ?>">
+            <img src="http://cdn.shopify.com/s/files/1/0247/3455/t/1/assets/moreinfo.png?1825" />
+        </a>
+    </div>
+    <?php
        echo $after_widget;
     }
 
@@ -95,6 +112,8 @@ class pu_media_upload_widget extends WP_Widget
     public function update( $new_instance, $old_instance ) {
         // update logic goes here
         $updated_instance = $new_instance;
+        error_log($new_instance['buy_now_link']);
+        $updated_instance['buy_now_link'] = $new_instance['buy_now_link'] === "on" ? 1:0;
         return $updated_instance;
     }
 
@@ -134,6 +153,12 @@ class pu_media_upload_widget extends WP_Widget
         <p>
             <label for="<?php echo $this->get_field_name( 'link' ); ?>"><?php _e( 'Link:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'link' ); ?>" name="<?php echo $this->get_field_name( 'link' ); ?>" type="text" value="<?php echo esc_attr( $link ); ?>" />
+
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_name( 'buy_now_link' ); ?>"><?php _e( 'Buy Now Link:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'buy_now_link' ); ?>" name="<?php echo $this->get_field_name( 'buy_now_link' ); ?>" type="checkbox" <?php checked(isset($instance['buy_now_link']) ? $instance['buy_now_link'] : 0); ?> />
         </p>
 
         <?php
