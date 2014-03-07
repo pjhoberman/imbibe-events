@@ -49,7 +49,7 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
     //test if all options are empty so we can display default text if they are
     $empty = ( empty( $responsive_options['home_headline'] ) && empty( $responsive_options['home_subheadline'] ) && empty( $responsive_options['home_content_area'] ) ) ? false : true;
     ?>
-
+<?php /*
     <div id="featured" class="grid col-940">
 
         <div id="featured-content" class="grid col-460">
@@ -117,7 +117,7 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
         <!-- end of #featured-image -->
 
     </div><!-- end of #featured -->
-
+*/ ?>
     <?php
     get_sidebar( 'home' );
     get_footer();
