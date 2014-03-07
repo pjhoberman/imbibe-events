@@ -37,6 +37,4 @@ function responsive_free_get_option( $option, $default = false ) {
 	return $default;
 }
 
-include_once($_SERVER['DOCUMENT_ROOT'] . "/wp-content/scripts/functions.php");
-
 ?>

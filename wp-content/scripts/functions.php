@@ -26,7 +26,7 @@ function prefix_url_rewrite_templates() {
 
     if ( get_query_var( 'event_slug' ) ) {
         add_filter( 'template_include', function() {
-            return get_template_directory() . '/page-templates/event-details.php';
+            return get_stylesheet_directory() . '/page-templates/event-details.php';
         });
     }
 }
