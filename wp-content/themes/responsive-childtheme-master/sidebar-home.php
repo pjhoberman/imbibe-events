@@ -31,7 +31,7 @@ if( !defined( 'ABSPATH' ) ) {
             <?php if( !dynamic_sidebar( 'home-widget-1' ) ) : ?>
                 <div class="widget-wrapper">
 
-                    <div class="widget-title-home"><h3><?php _e( 'Home Widget 1', 'responsive' ); ?></h3></div>
+                    <div class="widget-title-home"><!-- <h3><?php _e( 'Home Widget 1', 'responsive' ); ?></h3> --></div>
 
                 </div><!-- end of .widget-wrapper -->
             <?php endif; //end of home-widget-1 ?>
@@ -48,7 +48,7 @@ if( !defined( 'ABSPATH' ) ) {
             <?php if( !dynamic_sidebar( 'home-widget-2' ) ) : ?>
                 <div class="widget-wrapper">
 
-                    <div class="widget-title-home"><h3><?php _e( 'Home Widget 2', 'responsive' ); ?></h3></div>
+                    <div class="widget-title-home"><!-- <h3><?php _e( 'Home Widget 2', 'responsive' ); ?></h3> --></div>
 
                 </div><!-- end of .widget-wrapper -->
             <?php endif; //end of home-widget-2 ?>
@@ -64,7 +64,7 @@ if( !defined( 'ABSPATH' ) ) {
             <?php if( !dynamic_sidebar( 'home-widget-3' ) ) : ?>
                 <div class="widget-wrapper">
 
-                    <div class="widget-title-home"><h3><?php _e( 'Home Widget 3', 'responsive' ); ?></h3></div>
+                    <div class="widget-title-home"><!-- <h3><?php _e( 'Home Widget 3', 'responsive' ); ?></h3> --></div>
 
                 </div><!-- end of .widget-wrapper -->
             <?php endif; //end of home-widget-3 ?>
