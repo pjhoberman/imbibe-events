@@ -1,14 +1,14 @@
 <?php
 /*
-* Plugin Name: Media Upload Widget
-* Plugin URI: http://www.paulund.co.uk
-* Description: A widget that allows you to upload media from a widget
+* Plugin Name: Featured Event Widget
+* Plugin URI: http://www.imbibedenver.com
+* Description: A widget to display featured events
 * Version: 1.0
-* Author: Paul Underwood
-* Author URI: http://www.paulund.co.uk
+* Author: PJ Hoberman
+* Author URI: http://www.imbibedenver.com
 * License: GPL2
 
-Copyright 2012  Paul Underwood
+Copyright 2014 PJ Hoberman
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License,
@@ -24,8 +24,6 @@ Resources:
     * http://www.makeuseof.com/tag/how-to-create-wordpress-widgets/
 
 Todo:
-    * move media upload widget higher
-    * save image?
     * display
 */
 /**
@@ -82,7 +80,7 @@ class pu_media_upload_widget extends WP_Widget
         // Add any html to output the image in the $instance array
        extract($args, EXTR_SKIP);
        echo $before_widget;
-       echo '<img src="' . $instance['image'] . '" />';
+       echo '<a href="' . $instance['link'] . '"><img src="' . $instance['image'] . '" /></a>';
        echo $after_widget;
     }
 
@@ -116,6 +114,12 @@ class pu_media_upload_widget extends WP_Widget
             $title = $instance['title'];
         }
 
+        $link = '';
+        if(isset($instance['link']))
+        {
+            $link = $instance['link'];
+        }
+
         $image = '';
         if(isset($instance['image']))
         {
@@ -125,6 +129,11 @@ class pu_media_upload_widget extends WP_Widget
         <p>
             <label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_name( 'link' ); ?>"><?php _e( 'Link:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'link' ); ?>" name="<?php echo $this->get_field_name( 'link' ); ?>" type="text" value="<?php echo esc_attr( $link ); ?>" />
         </p>
 
         <?php
