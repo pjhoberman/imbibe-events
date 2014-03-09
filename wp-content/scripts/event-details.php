@@ -2,68 +2,109 @@
             <?php $this_event = getThisEvent($event_slug); ?>
             <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/styles/event-details.css">
 
+
+<?php
+
+// todo - probably make getter functions to ensure data exists and doens't break site
+
+      $start_time = strtotime($this_event -> start_time);
+      $address = $this_event -> addresses[0];
+      $event_details_json = array(
+            "start_date" => array(
+                  "year" => date('Y', $start_time) * 1,
+                  "month" => date('n', $start_time) * 1,
+                  "day" => date('j', $start_time) * 1,
+                  "hour" => date('G', $start_time) - 7, // todo: timezone issues
+                  "minute" => date('i', $start_time) * 1
+                  ),
+            "location" => array(
+                  "address" => $this_event -> addresses[0] -> street,
+                  "zip" => $this_event -> addresses[0] -> zip
+                  )
+            );
+
+      $price_range;
+      function getPriceRange() {
+            global $this_event, $price_range;
+            if (!isset($price_range -> low )) {
+                  $temp_low = 1000000000; // start high
+                  $temp_high = 0;
+                  foreach ($this_event -> ticket_types as $key => $ticket_type) {
+                        if ($ticket_type -> cent_price < $temp_low) {
+                              $temp_low = $ticket_type -> cent_price;
+                        }
+                        if ($ticket_type -> cent_price > $temp_high) {
+                              $temp_high = $ticket_type -> cent_price;
+                        }
+                  }
+                  $price_range = array("low" => $temp_low, "high" => $temp_high);
+            }
+            return $price_range;
+      }
+
+      function formatPriceRange() {
+            $range = getPriceRange();
+            $price_low = $range[low];
+            $price_high = $range[high];
+
+            $formatted = number_format($price_low / 100, 2);
+
+            if ($price_high !== $price_low) {
+                  $formatted .= " - " . number_format($price_high / 100, 2);
+            }
+            return $formatted;
+      }
+
+?>
+
 <script type="text/javascript">
 
 // move this to a script file
 
-      // mock
-      var event_details = {
-            start_date: {
-                  year: 2014,
-                  month: 3,
-                  day: 22,
-                  hour: 15,
-                  minute: 0
-            },
-            location: {
-                  address: "1405 Curtis Street",
-                  city: "Denver",
-                  state: "Colorado"
-            }
-      };
+var event_details = <?= json_encode($event_details_json) ?>
+
 
 
 function tick(start_date, today) {
-    if(start_date < today){
-       var seconds = '0';
-   } else {
-      var seconds = Math.floor((start_date-today) / 1000);
-  }
+      if(start_date < today){
+            var seconds = '0';
+      } else {
+            var seconds = Math.floor((start_date-today) / 1000);
+      }
 
-  var days = Math.floor(seconds / 60 / 60 / 24);
-  seconds -= days * 60 * 60 * 24;
-  var hours = Math.floor(seconds / 60 / 60);
-  seconds -= hours * 60 * 60;
-  var minutes = Math.floor(seconds/  60);
-  seconds -= minutes * 60;
+      var days = Math.floor(seconds / 60 / 60 / 24);
+      seconds -= days * 60 * 60 * 24;
+      var hours = Math.floor(seconds / 60 / 60);
+      seconds -= hours * 60 * 60;
+      var minutes = Math.floor(seconds/  60);
+      seconds -= minutes * 60;
 
-  if (days < 10)
-      days = "0" + days;
+      if (days < 10)
+            days = "0" + days;
 
-  if (hours < 10)
-      hours = "0" + hours;
+      if (hours < 10)
+            hours = "0" + hours;
 
-  if (minutes < 10 )
-      minutes = "0" + minutes;
+      if (minutes < 10 )
+            minutes = "0" + minutes;
 
-  if (seconds < 10 )
-      seconds = "0" + seconds;
+      if (seconds < 10 )
+            seconds = "0" + seconds;
 
-  jQuery('#ticker_days').text(days);
-  jQuery('#ticker_hours').text(hours);
-  jQuery('#ticker_minutes').text(minutes);
-  jQuery('#ticker_seconds').text(seconds);
-  if(start_date >= today){
-      var new_date = new Date(start_date - 1000);
-      var t = setTimeout(function(){
-        tick(new_date, today);
-    }, 1000);
-  }
-
+      jQuery('#ticker_days').text(days);
+      jQuery('#ticker_hours').text(hours);
+      jQuery('#ticker_minutes').text(minutes);
+      jQuery('#ticker_seconds').text(seconds);
+      if(start_date >= today){
+            var new_date = new Date(start_date - 1000);
+            var t = setTimeout(function(){
+                  tick(new_date, today);
+            }, 1000);
+      }
 }
 
 function full_address(){
-    return event_details.location.address + ', ' + event_details.location.city + ', ' + event_details.location.state;
+    return event_details.location.address + ', ' + event_details.location.zip;
   }
 
 jQuery(document).ready(function(){
@@ -125,24 +166,24 @@ jQuery(document).ready(function(){
     <!-- WHEN -->
     <div class="when grid col-300">
       <img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Calendar.png?1825">
-      <span class="day-of-week" id="dow">Saturday</span><br>
-      <span class="date" id="event_date">March 22, 2014</span><br>
-      <span class="time" id="event_time">3:00 PM - 7:00 PM</span>
+      <span class="day-of-week" id="dow"><?= $this_event -> formatted_start_time -> day ?></span><br>
+      <span class="date" id="event_date"><?= $this_event -> formatted_start_time -> full_date ?></span><br>
+      <span class="time" id="event_time"><?= $this_event -> formatted_start_time -> time ?> - <?= $this_event -> formatted_end_time -> time ?></span>
   </div>
 
   <!-- WHERE -->
   <div class="where grid col-300">
       <img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Map-pin.png?1825">
-      <span class="location-name" id="location-name">The Curtis Hotel</span><br>
-      <span class="address" id="address">1405 Curtis Street</span><br>
-      <span class="citystate" id="citystate">Denver, CO</span>
+      <span class="location-name" id="location-name"><?= $this_event -> addresses[0] -> name ?></span><br>
+      <span class="address" id="address"><?= $this_event -> addresses[0] -> street ?></span><br>
+      <span class="citystate" id="citystate">GET CITY</span>
   </div>
 
   <!-- PRICE -->
   <div class="pricing grid col-300 fit">
       <img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/dolla-sign.png?1825">
       <span class="price-title">Price</span><br>
-      <span class="price-range" id="price-range">50.00 - 80.00</span>
+      <span class="price-range" id="price-range"><?= formatPriceRange() ?></span>
 
   </div>
   <hr class="designed grid col-860">
@@ -152,7 +193,7 @@ jQuery(document).ready(function(){
 <div id="ticketing-small">
   <h2>Get your tickets</h2>
 
-  <iframe id="nightout-tickets-small" width="100%" height="620" frameborder="0" border="0" src="https://embed.nightout.com/events/collaboration-fest"></iframe>
+  <iframe id="nightout-tickets-small" width="100%" height="620" frameborder="0" border="0" src="https://embed.nightout.com/events/<?= $this_event -> subdomain ?>"></iframe>
 
 
   <div id="too-late" class="grid col-300">
@@ -168,53 +209,13 @@ jQuery(document).ready(function(){
 <div id="event-details" class="grid col-540">
     <h2>Event Details</h2>
     <div id="event-details-content">
-<p><span id="sceditor-start-marker" class="sceditor-selection sceditor-ignore" style="line-height: 0; display: none;"></span><span id="sceditor-end-marker" class="sceditor-selection sceditor-ignore" style="line-height: 0; display: none;"></span>Imbibe and the Colorado Brewers Guild have teamed up to throw the first ever Collaboration Festival, the headline event of Colorado Craft Beer Week! As one of the four Lovibond Series events, Collaboration Festival will showcase the release of over 35 Colorado collaboration beers, all being unveiled at the event! Each beer featured at Collaboration Festival will be created by at least one Colorado Brewers Guild member, with other participating breweries coming from near and far. The other breweries will be from both in and out of state and some collaborations involve more than 5 breweries! The out-of-state brewery involvement is an exciting first for Colorado Craft Beer week.</p>
-<p>More collaborations are being added but the current collaboration list includes:</p>
-<ul>
-<li>Avery and Russian River</li>
-<li>Barrels &amp; Bottles and Golden City</li>
-<li>Big Choice and Caution</li>
-<li>Black Fox and TRVE</li>
-<li>Bootstrap and Eddyline</li>
-<li>Boulder and Sanitas</li>
-<li>Cannonball Creek and 12 Degree</li>
-<li>Caution and Copper Kettle</li>
-<li>Denver Beer Co and Upslope</li>
-<li>Dry Dock and Steamworks</li>
-<li>Echo and Front Range</li>
-<li>Echo and Right Brain (MI)</li>
-<li>Epic and Elevation</li>
-<li>FATE and Mission (SD)</li>
-<li>FATE, Bru and Wild Woods</li>
-<li>Former Future and Station 26</li>
-<li>Front Range and Denver Pearl</li>
-<li>Great Divide and Crooked Stave</li>
-<li>Hogshead and Crooked Stave</li>
-<li>Montain Sun Former Brewer Collaboration, Breck, Cannonball Creek, Durango, Jagged Mountain, Eddyline, Mountain Sun, Telluride, Iron Springs (CA), Moo Brew (Tasmania)</li>
-<li>Odell and New Belgium</li>
-<li>OMF and Wild Woods</li>
-<li>Oskar Blues and La Cumbre</li>
-<li>Oskar Blues and Shamrock</li>
-<li>Oskar Blues and St. Archer</li>
-<li>Pagosa Springs and RockYard</li>
-<li>Pugs, Dillion Dam, Breck, Backcountry, and Broken Compass - Summit County Collaboration</li>
-<li>Renegade, Wit's End, Strange, TRVE, Black Sky, Breckenridge</li>
-<li>River North and TRVE</li>
-<li>Rockslide, Kannah Creek and Palisade</li>
-<li>Ska and Nynashamns Angbryggeri</li>
-<li>Southern Colorado Collaboration: Pikes Peak, Bristol, Phantom Canyon</li>
-<li>Telluride Brewing and Marble Brewing</li>
-<li>Trinity and Black Bottle</li>
-<li>Twisted Pine and Swamp Head</li>
-<li>Wild Woods and Echo</li>
-<li>Wynkoop and Wonderland</li>
-</ul>
+            <?= $this_event -> description ?> <? // dangerous with html.. clean this? ?>
     </div>
     <div id="ticker">
-      <div id="ticker_days">14</div>
-      <div id="ticker_hours">22</div>
-      <div id="ticker_minutes">02</div>
-      <div id="ticker_seconds">17</div><br>
+      <div id="ticker_days">00</div>
+      <div id="ticker_hours">00</div>
+      <div id="ticker_minutes">00</div>
+      <div id="ticker_seconds">00</div><br>
 
   </div>
 
@@ -224,7 +225,7 @@ jQuery(document).ready(function(){
 <div id="ticketing" >
   <h2>Get your tickets</h2>
 
-  <iframe id="nightout-tickets" width="100%" height="620" frameborder="0" border="0" name="Big Dog Test Event" src="https://embed.nightout.com/events/collaboration-fest"></iframe>
+  <iframe id="nightout-tickets" width="100%" height="620" frameborder="0" border="0" name="Big Dog Test Event" src="https://embed.nightout.com/events/<?= $this_event -> subdomain ?>"></iframe>
 
 
   <div id="too-late" class="grid col-300">
@@ -278,11 +279,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
   </p>
   <div id="share-btns">
     <div class="share-btn">
-      <a href="http://twitter.com/share?u=Check+out+this+event!+Collaboration Festival:+http://imbibedenver.com/products/collaboration-festival" target="_blank"><img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Twitter.png?1825"></a>
-      <!-- <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://imbibedenver.com/products/collaboration-festival" data-count="none" data-via="">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> -->
+      <a href="http://twitter.com/share?u=Check+out+this+event!+<?= $this_event -> title ?>:+http://imbibedenver.com/event/<?= $this_event -> subdomain ?>" target="_blank"><img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Twitter.png?1825"></a>
     </div>
     <div class="share-btn">
-      <a href="https://plus.google.com/share?url=http://imbibedenver.com/products/collaboration-festival" target="_blank">
+      <a href="https://plus.google.com/share?url=http://imbibedenver.com/event/<?= $this_event -> subdomain ?>" target="_blank">
         <img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Google-Plus.png?1825">
       </a>
       <!-- <g:plusone size="medium" annotation="none"></g:plusone>-->
@@ -294,11 +294,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
     </div> -->
     <!-- <div class="facebook-like share-icon"><iframe src="//www.facebook.com/plugins/like.php?href=http://imbibedenver.com/products/collaboration-festival&amp;send=false&amp;layout=button_count&amp;width=120&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe></div> -->
     <div class="share-btn">
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://imbibedenver.com/products/collaboration-festival" target="_blank"><img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Facebook.png?1825"></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://imbibedenver.com/event/<?= $this_event -> subdomain ?>" target="_blank"><img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Facebook.png?1825"></a>
     </div>
 
     <div class="share-btn">
-      <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=&amp;su=Check+out+Collaboration Festival&amp;body=Check+out+this+event!%0D%0A%0D%0Ahttp://imbibedenver.com/products/collaboration-festival" target="_blank">
+      <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=&amp;su=Check+out+<?= $this_event -> title ?>&amp;body=Check+out+this+event!%0D%0A%0D%0Ahttp://imbibedenver.com/event/<?= $this_event -> subdomain ?>" target="_blank">
         <img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Email.png?1825">
       </a>
     </div>

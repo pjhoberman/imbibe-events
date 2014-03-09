@@ -88,25 +88,6 @@ h1.title {
     padding-left: 1px;
 }
 
-.single-option-selector {
-    min-width: 300px;
-}
-span.customStyleSelectBox {
-    font-size:14px;
-    /*background-color: #f5f0de; */
-    color:#c9c9c9;
-    padding:10px 7px;
-    border:1px solid #c9c9c9;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px 5px;
-    line-height: 11px;
-}
-
-
-.customStyleSelectBoxInner {
-    background:url({{"arrow.jpg" | asset_url}}) no-repeat center right;
-}
 
 #calculated-price {
     float: left;
@@ -175,3 +156,10 @@ span.customStyleSelectBox {
   #share-btns {
     float: right;
   }
+
+/*Correcting for theme's styles*/
+.address {
+ background-color: inherit;
+ border: none;
+ color: inherit;
+}
