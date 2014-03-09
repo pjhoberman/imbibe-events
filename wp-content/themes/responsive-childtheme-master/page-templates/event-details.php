@@ -22,8 +22,11 @@ if( !defined( 'ABSPATH' ) ) {
 
 get_header(); ?>
 
-<div id="content" class="<?php echo implode( ' ', responsive_get_content_classes() ); ?>">
+<!-- <div id="content" class="<?php echo implode( ' ', responsive_get_content_classes() ); ?>"> -->
+<div id="content" class="grid col-940">
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . "/wp-content/scripts/event-details.php"); ?>
+<?php /*
+// Block all the post stuff for now //
     <?php if( have_posts() ) : ?>
 
         <?php while( have_posts() ) : the_post(); ?>
@@ -36,10 +39,10 @@ get_header(); ?>
 
                 <?php get_template_part( 'post-meta-page' ); ?>
 
-                <div class="post-entry">
+                <!-- <div class="post-entry">
                     <?php the_content( __( 'Read more &#8250;', 'responsive' ) ); ?>
                     <?php wp_link_pages( array( 'before' => '<div class="pagination">' . __( 'Pages:', 'responsive' ), 'after' => '</div>' ) ); ?>
-                </div>
+                </div> -->
                 <!-- end of .post-entry -->
 
                 <?php get_template_part( 'post-data' ); ?>
@@ -48,9 +51,9 @@ get_header(); ?>
             </div><!-- end of #post-<?php the_ID(); ?> -->
             <?php responsive_entry_after(); ?>
 
-            <?php responsive_comments_before(); ?>
-            <?php comments_template( '', true ); ?>
-            <?php responsive_comments_after(); ?>
+            <?php // responsive_comments_before(); ?>
+            <?php // comments_template( '', true ); ?>
+            <?php // responsive_comments_after(); ?>
 
         <?php
         endwhile;
@@ -63,8 +66,10 @@ get_header(); ?>
 
     endif;
     ?>
+// End of Block all the post stuff for now //
+    */ ?>
 
 </div><!-- end of #content -->
 
-<?php get_sidebar(); ?>
+<?php // get_sidebar(); ?>
 <?php get_footer(); ?>

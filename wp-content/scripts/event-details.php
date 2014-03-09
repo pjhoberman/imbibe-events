@@ -2,22 +2,22 @@
             <?php $this_event = getThisEvent($event_slug); ?>
             <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/styles/event-details.css">
             <?php
-            if($this_event) { ?>
+            // if($this_event) { ?>
 
-            <div id="eventTitle"><?= $this_event -> title ?></div>
+<!--             <div id="eventTitle"><?= $this_event -> title ?></div>
             <div id="eventStart"><?= $this_event -> start_time ?></div>
             <div id="eventEnd"><?= $this_event -> end_time ?></div>
             <div id="eventDescription"><?= $this_event -> description ?></div>
             <div id="eventPoster"><img src="<?= $this_event -> poster_url -> large ?>" /></div>
             <iframe id="ticketingEmbed" src="https://embed.nightout.com/events/<?= $this_event -> subdomain ?>" height="600px" width="400px"></iframe>
+ -->
+            <?php // } else { ?>
+                <!-- We couldn't find this event. Please try again. -->
+            <?php //} ?>
 
-            <?php } else { ?>
-                We couldn't find this event. Please try again.
-            <?php } ?>
 
 
-
-<div class="span12">
+<div class="grid col-940">
 
       <!-- Begin featured image -->
       <div class="image featured">
@@ -32,15 +32,15 @@
 
 </div>
 
-<div class="span12">
+<div class="grid col-940">
 
   <div class="description">
     <span id="tag_line"></span>
 </div>
 
-<div class="details span12 inner-left inner-right">
+<div class="details grid col-940">
     <!-- WHEN -->
-    <div class="when span4 inner-left inner-right">
+    <div class="when grid col-300">
       <img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Calendar.png?1825">
       <span class="day-of-week" id="dow">Saturday</span><br>
       <span class="date" id="event_date">March 22, 2014</span><br>
@@ -48,7 +48,7 @@
   </div>
 
   <!-- WHERE -->
-  <div class="where span4 inner-left inner-right">
+  <div class="where grid col-300">
       <img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Map-pin.png?1825">
       <span class="location-name" id="location-name">The Curtis Hotel</span><br>
       <span class="address" id="address">1405 Curtis Street</span><br>
@@ -56,14 +56,15 @@
   </div>
 
   <!-- PRICE -->
-  <div class="pricing span4 inner-left inner-right">
+  <div class="pricing grid col-300 fit">
       <img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/dolla-sign.png?1825">
       <span class="price-title">Price</span><br>
       <span class="price-range" id="price-range">50.00 - 80.00</span>
 
   </div>
-  <hr class="designed span11">
+  <hr class="designed grid col-860">
 </div>
+
 
 <div id="ticketing-small">
   <h2>Get your tickets</h2>
@@ -71,7 +72,7 @@
   <iframe id="nightout-tickets-small" width="100%" height="620" frameborder="0" border="0" src="https://embed.nightout.com/events/collaboration-fest"></iframe>
 
 
-  <div id="too-late" class="span4">
+  <div id="too-late" class="grid col-300">
     <p>You snooze you lose! This event already happened, but we have plenty more parties for you. Sign up for our newsletter and never miss out again.</p>
     <form action="http://imbibedenver.us4.list-manage.com/subscribe/post?u=7ac95e8ad52ca60aca50afc48&amp;id=396c7d3287" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
         <input type="email" value="" placeholder="Email Address" name="EMAIL" id="mail"><input type="submit" class="btn newsletter" value="Subscribe" name="subscribe" id="subscribe">
@@ -81,45 +82,9 @@
 
 
 
-<div id="event-details" class="span6 inner-left">
+<div id="event-details" class="grid col-540">
     <h2>Event Details</h2>
     <div id="event-details-content">
-        <script>// <![CDATA[
-var event_details = {
-    start_date: {
-        year: 2014,
-        month: 3,
-        day: 22,
-        hour: 15,
-        minute: 0
-    },
-
-    end_date: {
-        year: 2014,
-        month: 3,
-        day: 22,
-        hour: 19,
-        minute: 0
-    },
-
-    name: "Collaboration Festival",
-    // tag_line: "Just a test",
-    location: {
-        name: "The Curtis Hotel",
-        address: "1405 Curtis Street",
-        city: "Denver",
-        state: "CO",
-        zip: "80202"
-    },
-    price_low: "50.00",
-    price_high: "80.00",
-  night_out_link: "https://embed.nightout.com/events/collaboration-fest"
-};
-
-$(function() {
-  set_event_details(event_details);
-});
-// ]]></script>
 <p><span id="sceditor-start-marker" class="sceditor-selection sceditor-ignore" style="line-height: 0; display: none;"></span><span id="sceditor-end-marker" class="sceditor-selection sceditor-ignore" style="line-height: 0; display: none;"></span>Imbibe and the Colorado Brewers Guild have teamed up to throw the first ever Collaboration Festival, the headline event of Colorado Craft Beer Week! As one of the four Lovibond Series events, Collaboration Festival will showcase the release of over 35 Colorado collaboration beers, all being unveiled at the event! Each beer featured at Collaboration Festival will be created by at least one Colorado Brewers Guild member, with other participating breweries coming from near and far. The other breweries will be from both in and out of state and some collaborations involve more than 5 breweries! The out-of-state brewery involvement is an exciting first for Colorado Craft Beer week.</p>
 <p>More collaborations are being added but the current collaboration list includes:</p>
 <ul>
@@ -172,13 +137,14 @@ $(function() {
 
 </div>
 
-<div id="ticketing" class="span5 inner-right">
+<div class="grid col-380 fit">
+<div id="ticketing" >
   <h2>Get your tickets</h2>
 
   <iframe id="nightout-tickets" width="100%" height="620" frameborder="0" border="0" name="Big Dog Test Event" src="https://embed.nightout.com/events/collaboration-fest"></iframe>
 
 
-  <div id="too-late" class="span4">
+  <div id="too-late" class="grid col-300">
     <p>You snooze you lose! This event already happened, but we have plenty more parties for you. Sign up for our newsletter and never miss out again.</p>
     <form action="http://imbibedenver.us4.list-manage.com/subscribe/post?u=7ac95e8ad52ca60aca50afc48&amp;id=396c7d3287" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
         <input type="email" value="" placeholder="Email Address" name="EMAIL" id="mail"><input type="submit" class="btn newsletter" value="Subscribe" name="subscribe" id="subscribe">
@@ -244,6 +210,7 @@ $(function() {
     </div>
 
   </div>
+</div>
 </div>
 
 <script type="text/javascript">
