@@ -1,0 +1,141 @@
+h1.title {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.details {
+    float: left;
+    clear: both;
+    width: 100%;
+    color: black;
+}
+
+.details .when,
+.details .where,
+.details .pricing {
+    display: block;
+    float: left;
+    margin: 10px 0 15px;
+}
+
+
+.when .day-of-week,
+.where .location-name,
+.pricing .price-title{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.day-of-week {
+    text-transform: uppercase;
+}
+
+.when .date,
+.where .address,
+.pricing .price-range{
+    font-size: 16px;
+}
+
+
+.when img,
+.where img,
+.pricing img{
+    float: left;
+    margin-right: 8px;
+}
+
+.when .time,
+.where .citystate{
+    font-style: italic;
+}
+
+.price-range {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.purchase {
+    clear: both;}
+
+    #product .description {
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    #map-canvas { height: 400px; width: 400px; }
+
+    hr.designed {
+        border: 1px solid #cfcfcf;
+        clear: both;
+        margin-bottom: 15px;
+    }
+
+    #ticker {
+     background: white url({{'All-ticker.png' | asset_url}}) no-repeat 0 0;
+     margin: 15px auto;
+     height: 70px;
+     width: 256px;
+ }
+ #ticker > div {
+    width: 49px;
+    height: 49px;
+    float: left;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    padding-top: 17px;
+    text-align: center;
+    margin-right: 14px;
+    padding-left: 1px;
+}
+
+.single-option-selector {
+    min-width: 300px;
+}
+span.customStyleSelectBox {
+    font-size:14px;
+    /*background-color: #f5f0de; */
+    color:#c9c9c9;
+    padding:10px 7px;
+    border:1px solid #c9c9c9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px 5px;
+    line-height: 11px;
+}
+
+
+.customStyleSelectBoxInner {
+    background:url({{"arrow.jpg" | asset_url}}) no-repeat center right;
+}
+
+#calculated-price {
+    float: left;
+    margin-left: 15px;
+    font-size: 10px;
+}
+
+.line-item {
+    width: 150px;
+}
+
+.line-item span {
+    float: right;
+    display: inline-block;
+}
+
+#bottom-line {
+    border-top: 1px dotted black;
+}
+
+#too-late {
+    display: none;
+    margin-bottom: 50px;
+}
+
+#event-details {
+    text-align: justify;
+}
+
+#event-details-content {
+    padding-right: 15px;
+}
