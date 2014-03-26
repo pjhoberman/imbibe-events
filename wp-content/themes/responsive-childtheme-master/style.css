@@ -307,6 +307,37 @@ position: relative;
   }
 
 
+/* Carried over from shopify */
+
+.icon-social { float: left; display: block; width: 32px; height: 32px; overflow: hidden; text-indent: -9999px; margin-right: 10px; margin-bottom: 10px;}
+.icon-social { background: url('/wp-content/imbibe-images/social-icons-light-bg.png') no-repeat; }
+
+.icon-social {
+  filter: alpha(opacity=50); /* internet explorer */
+  -khtml-opacity: 0.5;      /* khtml, old safari */
+  -moz-opacity: 0.5;       /* mozilla, netscape */
+  opacity: 0.5;           /* fx, safari, opera */
+}
+.icon-social:hover {
+  filter: alpha(opacity=100); /* internet explorer */
+  -khtml-opacity: 1;      /* khtml, old safari */
+  -moz-opacity: 1;       /* mozilla, netscape */
+  opacity: 1;           /* fx, safari, opera */
+}
+.icon-social.twitter { background-position: 0 0; }
+.icon-social.facebook { background-position: -50px 0; }
+.icon-social.youtube { background-position: -100px 0; }
+.icon-social.atom { background-position: -150px 0; }
+.icon-social.instagram { background-position: -200px 0; }
+.icon-social.pinterest { background-position: -250px 0; }
+.icon-social.vimeo { background-position: -300px 0; }
+.icon-social.tumblr { background-position: -350px 0; }
+.icon-social.google { background-position: -400px 0; }
+
+.icon-facebook { float: left; margin-top: 1px; width: 40px; overflow: hidden; }
+.icon-cart { float: left; display: block; width: 20px; height: 16px; margin: 21px 10px 0 0; opacity: 0.8; filter: alpha(opacity = 60); }
+
+
 
 
 
