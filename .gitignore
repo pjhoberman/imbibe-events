@@ -6,3 +6,8 @@ wp-content/backups/
 wp-content/upgrade/
 sitemap.xml
 sitemap.xml.gz
+
+# Hidden system files
+*.DS_Store
+*[Tt]humbs.db
+*.Trashes
