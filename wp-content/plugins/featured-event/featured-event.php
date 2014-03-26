@@ -89,12 +89,12 @@ class pu_media_upload_widget extends WP_Widget
           <span class="title"><?= $instance['title'] ?></span>
           <?php if ($instance['buy_now_link'] === 1) { ?>
           <a class="buy-now" title="Buy Now" href="<?= $instance['link'] ?>">
-            <img src="http://cdn.shopify.com/s/files/1/0247/3455/t/1/assets/buynow.png?1825" />
+            <img src="/wp-content/imbibe-images/buynow.png" />
         </a>
         <?php } ?>
 
         <a class="info" title="More Info" href="<?= $instance['link'] ?>">
-            <img src="http://cdn.shopify.com/s/files/1/0247/3455/t/1/assets/moreinfo.png?1825" />
+            <img src="/wp-content/imbibe-images/moreinfo.png" />
         </a>
     </div>
     <?php

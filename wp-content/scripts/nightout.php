@@ -39,3 +39,9 @@ function getThisEvent($slug){
 
     }
 }
+
+function zipToCityState($zip){
+    // uses ziptasticapi.com API.
+    $ziptastic = json_decode(file_get_contents("http://ziptasticapi.com/" . $zip));
+    return ucfirst(strtolower($ziptastic -> city)) . ", " . $ziptastic -> state;
+}

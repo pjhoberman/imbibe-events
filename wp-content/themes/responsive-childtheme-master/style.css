@@ -16,7 +16,7 @@ License URI: license.txt
 
 /* 4.0.1 - Header Assets -- Custom from PJ */
 #header-logo {
-  background: white url(//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/imbibe-home-966.jpg?1809) top center no-repeat;
+  background: white url(/wp-content/imbibe-images/imbibe-home-966.jpg) 0 0 no-repeat;
   padding: 0;
   height: 198px;
   position: relative;
@@ -81,7 +81,7 @@ License URI: license.txt
 @media only screen and (min-width: 768px) and (max-width: 1026px) {
   .logo { max-width: 738px; }
   #header-logo {
-  background: white url(//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Imbibe-Home-738.jpg?1809) top center no-repeat;
+  background: white url(/wp-content/imbibe-images/Imbibe-Home-738.jpg) top center no-repeat;
   }
 #header-imbibe {
   top: 76px;
@@ -125,8 +125,10 @@ License URI: license.txt
   #header .logo a img { max-width: 200px; }
   /* .featured img { max-width: 468px !important; } */
 
+.logo { max-width: 568px; }
+
   #header-logo {
-  background: white url(//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Imbibe-Home-568.jpg?1809) top center no-repeat;
+  background: white url(/wp-content/imbibe-images/Imbibe-Home-568.jpg) top center no-repeat;
 }
   #header-imbibe {
   top: 76px;
@@ -177,7 +179,7 @@ License URI: license.txt
   .featured-product-image { margin-top:10px; }
 
   #header-logo {
-  background: white url(//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Imbibe-Home-450.jpg?1809) top center no-repeat;
+  background: white url(/wp-content/imbibe-images/Imbibe-Home-450.jpg) top center no-repeat;
 }
     #header-imbibe {
   top: 76px;
@@ -221,7 +223,7 @@ License URI: license.txt
   .logo { max-width: 290px;float:none;padding-bottom:20px; }
 
   #header-logo {
-  background: white url(//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Imbibe-Home-290.png?1809) top center no-repeat;
+  background: white url(/wp-content/imbibe-images/Imbibe-Home-290.png) top center no-repeat;
 }
 
       #header-imbibe {

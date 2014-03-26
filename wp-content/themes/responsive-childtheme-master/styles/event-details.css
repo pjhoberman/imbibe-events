@@ -70,7 +70,7 @@ h1.title {
     }
 
     #ticker {
-     background: white url(http://cdn.shopify.com/s/files/1/0247/3455/t/1/assets/All-ticker.png?1825) no-repeat 0 0;
+     background: white url(wp-content/imbibe-images/All-ticker.png) no-repeat 0 0;
      margin: 15px auto;
      height: 70px;
      width: 256px;

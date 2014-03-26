@@ -59,10 +59,10 @@ if( !defined( 'ABSPATH' ) ) {
 
 <div class="logo" id="header-logo">
           <a id="header-imbibe" href="/" class="header-element"></a>
-          <a id="header-about" href="/pages/about-us" class="header-element"></a>
-          <a id="header-how" href="/pages/how-it-works" class="header-element"></a>
+          <a id="header-about" href="/about-us" class="header-element"></a>
+          <a id="header-how" href="/how-it-works" class="header-element"></a>
           <a id="header-community" href="http://www.facebook.com/ImbibeDenver" class="header-element"></a>
-          <a id="header-contact" href="/pages/contact-us" class="header-element"></a>
+          <a id="header-contact" href="/contact" class="header-element"></a>
           <a id="header-facebook" href="http://www.facebook.com/ImbibeDenver" class="header-element" target="_blank"></a>
           <a id="header-twitter" href="http://twitter.com/imbibedenver" class="header-element" target="_blank"></a>
 

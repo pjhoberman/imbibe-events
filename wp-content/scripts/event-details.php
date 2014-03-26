@@ -145,7 +145,7 @@ jQuery(document).ready(function(){
 
       <!-- Begin featured image -->
       <div class="image featured">
-
+        <!-- TODO - Don't use this image, dynamic instead -->
       <a href="//cdn.shopify.com/s/files/1/0247/3455/products/Web_ready_image_1_1024x1024.jpg?v=1386631815" class="zoom" id="placeholder">
           <img src="//cdn.shopify.com/s/files/1/0247/3455/products/Web_ready_image_1_1024x1024.jpg?v=1386631815" alt="Collaboration Festival">
       </a>
@@ -165,7 +165,7 @@ jQuery(document).ready(function(){
 <div class="details grid col-940">
     <!-- WHEN -->
     <div class="when grid col-300">
-      <img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Calendar.png?1825">
+      <img src="/wp-content/imbibe-images/Calendar.png">
       <span class="day-of-week" id="dow"><?= $this_event -> formatted_start_time -> day ?></span><br>
       <span class="date" id="event_date"><?= $this_event -> formatted_start_time -> full_date ?></span><br>
       <span class="time" id="event_time"><?= $this_event -> formatted_start_time -> time ?> - <?= $this_event -> formatted_end_time -> time ?></span>
@@ -173,15 +173,15 @@ jQuery(document).ready(function(){
 
   <!-- WHERE -->
   <div class="where grid col-300">
-      <img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Map-pin.png?1825">
+      <img src="/wp-content/imbibe-images/Map-pin.png">
       <span class="location-name" id="location-name"><?= $this_event -> addresses[0] -> name ?></span><br>
       <span class="address" id="address"><?= $this_event -> addresses[0] -> street ?></span><br>
-      <span class="citystate" id="citystate">GET CITY</span>
+      <span class="citystate" id="citystate"><?= zipToCityState(80205) ?></span>
   </div>
 
   <!-- PRICE -->
   <div class="pricing grid col-300 fit">
-      <img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/dolla-sign.png?1825">
+      <img src="/wp-content/imbibe-images/dolla-sign.png">
       <span class="price-title">Price</span><br>
       <span class="price-range" id="price-range"><?= formatPriceRange() ?></span>
 
@@ -271,6 +271,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 <!-- Begin social buttons -->
+<? // todo: most of these buttons don't work ?>
 <div class="social" style="margin-top:50px;">
 
 <div id="social" class="clearfix span5 inner-left">
@@ -279,27 +280,24 @@ google.maps.event.addDomListener(window, 'load', initialize);
   </p>
   <div id="share-btns">
     <div class="share-btn">
-      <a href="http://twitter.com/share?u=Check+out+this+event!+<?= $this_event -> title ?>:+http://imbibedenver.com/event/<?= $this_event -> subdomain ?>" target="_blank"><img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Twitter.png?1825"></a>
+      <a href="http://twitter.com/share?u=Check+out+this+event!+<?= $this_event -> title ?>:+http://imbibedenver.com/event/<?= $this_event -> subdomain ?>" target="_blank"><img src="/wp-content/imbibe-images/Twitter.png"></a>
     </div>
     <div class="share-btn">
       <a href="https://plus.google.com/share?url=http://imbibedenver.com/event/<?= $this_event -> subdomain ?>" target="_blank">
-        <img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Google-Plus.png?1825">
+        <img src="/wp-content/imbibe-images/Google-Plus.png">
       </a>
       <!-- <g:plusone size="medium" annotation="none"></g:plusone>-->
     </div>
 
-    <!-- <div class="pinterest">
-      <a href="http://pinterest.com/pin/create/button/?url=http://imbibedenver.com/products/collaboration-festival&media=//cdn.shopify.com/s/files/1/0247/3455/products/Web_ready_image_1_large.jpg?v=1386631815" class="pin-it-button" count-layout="horizontal">Pin It</a>
-      <script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>
-    </div> -->
+
     <!-- <div class="facebook-like share-icon"><iframe src="//www.facebook.com/plugins/like.php?href=http://imbibedenver.com/products/collaboration-festival&amp;send=false&amp;layout=button_count&amp;width=120&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe></div> -->
     <div class="share-btn">
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://imbibedenver.com/event/<?= $this_event -> subdomain ?>" target="_blank"><img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Facebook.png?1825"></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://imbibedenver.com/event/<?= $this_event -> subdomain ?>" target="_blank"><img src="/wp-content/imbibe-images/Facebook.png?1825"></a>
     </div>
 
     <div class="share-btn">
       <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=&amp;su=Check+out+<?= $this_event -> title ?>&amp;body=Check+out+this+event!%0D%0A%0D%0Ahttp://imbibedenver.com/event/<?= $this_event -> subdomain ?>" target="_blank">
-        <img src="//cdn.shopify.com/s/files/1/0247/3455/t/1/assets/Email.png?1825">
+        <img src="/wp-content/imbibe-images/Email.png?1825">
       </a>
     </div>
 
