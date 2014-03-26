@@ -6,6 +6,7 @@ wp-content/backups/
 wp-content/upgrade/
 sitemap.xml
 sitemap.xml.gz
+wp-content/uploads/wpcf7_captcha/
 
 # Hidden system files
 *.DS_Store
