@@ -280,23 +280,21 @@ google.maps.event.addDomListener(window, 'load', initialize);
   </p>
   <div id="share-btns">
     <div class="share-btn">
-      <a href="http://twitter.com/share?u=Check+out+this+event!+<?= $this_event -> title ?>:+http://imbibedenver.com/event/<?= $this_event -> subdomain ?>" target="_blank"><img src="/wp-content/imbibe-images/Twitter.png"></a>
+      <a href="http://twitter.com/share?u=Check+out+this+event!+<?= $this_event -> title ?>:+<?= get_site_url() ?>/event/<?= $this_event -> subdomain ?>" target="_blank"><img src="/wp-content/imbibe-images/Twitter.png"></a>
     </div>
     <div class="share-btn">
-      <a href="https://plus.google.com/share?url=http://imbibedenver.com/event/<?= $this_event -> subdomain ?>" target="_blank">
+      <a href="https://plus.google.com/share?url=<?= get_site_url() ?>/event/<?= $this_event -> subdomain ?>" target="_blank">
         <img src="/wp-content/imbibe-images/Google-Plus.png">
       </a>
       <!-- <g:plusone size="medium" annotation="none"></g:plusone>-->
     </div>
 
-
-    <!-- <div class="facebook-like share-icon"><iframe src="//www.facebook.com/plugins/like.php?href=http://imbibedenver.com/products/collaboration-festival&amp;send=false&amp;layout=button_count&amp;width=120&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe></div> -->
     <div class="share-btn">
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://imbibedenver.com/event/<?= $this_event -> subdomain ?>" target="_blank"><img src="/wp-content/imbibe-images/Facebook.png?1825"></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=<?= get_site_url() ?>/event/<?= $this_event -> subdomain ?>" target="_blank"><img src="/wp-content/imbibe-images/Facebook.png?1825"></a>
     </div>
 
     <div class="share-btn">
-      <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=&amp;su=Check+out+<?= $this_event -> title ?>&amp;body=Check+out+this+event!%0D%0A%0D%0Ahttp://imbibedenver.com/event/<?= $this_event -> subdomain ?>" target="_blank">
+      <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=&amp;su=Check+out+<?= $this_event -> title ?>&amp;body=Check+out+this+event!%0D%0A%0D%0A<?= get_site_url() ?>/event/<?= $this_event -> subdomain ?>" target="_blank">
         <img src="/wp-content/imbibe-images/Email.png?1825">
       </a>
     </div>
