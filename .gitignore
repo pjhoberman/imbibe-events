@@ -7,7 +7,7 @@ wp-content/upgrade/
 sitemap.xml
 sitemap.xml.gz
 wp-content/uploads/wpcf7_captcha/
-
+wp-content/w3tc-config/master.php
 # Hidden system files
 *.DS_Store
 *[Tt]humbs.db
