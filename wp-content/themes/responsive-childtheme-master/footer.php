@@ -87,7 +87,7 @@ $responsive_options = responsive_get_options();
                 <a href="https://www.facebook.com/ImbibeDenver" title="Imbibe on Facebook" class="icon-social facebook">Facebook</a>
 
 
-                <a href="instagram.com/imbibedenver" title="Imbibe on Instagram" class="icon-social instagram">Instagram</a>
+                <a href="http://instagram.com/imbibedenver" title="Imbibe on Instagram" class="icon-social instagram">Instagram</a>
 
 
 
