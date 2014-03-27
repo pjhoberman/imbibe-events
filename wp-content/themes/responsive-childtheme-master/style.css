@@ -341,7 +341,19 @@ position: relative;
 
 
 
+@media only screen and (max-width: 629px) {
+  .visiblebox, #darkbackground {
+    display: none !important;
+  }
+}
 
+.visiblebox #mc_embed_signup input {
+  background-image: none;
+}
+
+#message {
+  padding: 10px;
+}
 
 
 

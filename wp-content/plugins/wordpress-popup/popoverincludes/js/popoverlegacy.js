@@ -45,7 +45,7 @@ function po_loadMessageBox( ) {
 	if( popover.usejs == 'yes' ) {
 
 		jQuery('#' + popover.divname ).width(jQuery('#message').width());
-		jQuery('#' + popover.divname ).height(jQuery('#message').height());
+		jQuery('#' + popover.divname ).height(jQuery('#message').height() + 20);
 
 		jQuery('#' + popover.divname ).css('top', (jQuery(window).height() / 2) - (jQuery('#message').height() / 2) );
 		jQuery('#' + popover.divname).css('left', (jQuery(window).width() / 2) - (jQuery('#message').width() / 2) );

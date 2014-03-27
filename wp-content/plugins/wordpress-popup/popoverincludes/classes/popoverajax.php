@@ -327,7 +327,7 @@ if(!class_exists('popoverajax')) {
 						} else {
 							$count = 1;
 						}
-						if(!headers_sent()) setcookie('popover_view_'.COOKIEHASH, $count , time() + 30000000, COOKIEPATH, COOKIE_DOMAIN);
+						if(!headers_sent()) setcookie('popover_view_'.COOKIEHASH, $count , time() + 2592000, COOKIEPATH, COOKIE_DOMAIN); // changed this to 30 days
 
 
 						return $popover;
