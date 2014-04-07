@@ -1,7 +1,7 @@
             <? include_once($_SERVER['DOCUMENT_ROOT'] . "/wp-content/scripts/nightout.php"); ?>
             <?php $this_event = getThisEvent($event_slug); ?>
+            <link href='http://fonts.googleapis.com/css?family=Sansita+One|Abril+Fatface|Oswald:400,700' rel='stylesheet' type='text/css'>
             <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/styles/event-details.css">
-
 
 <?php
 
@@ -145,10 +145,12 @@ jQuery(document).ready(function(){
 
       <!-- Begin featured image -->
       <div class="image featured">
+        <h1 id="event-title"><?= $this_event -> title ?></h1>
         <!-- TODO - Don't use this image, dynamic instead -->
-      <a href="//cdn.shopify.com/s/files/1/0247/3455/products/Web_ready_image_1_1024x1024.jpg?v=1386631815" class="zoom" id="placeholder">
+
+      <!-- <a href="//cdn.shopify.com/s/files/1/0247/3455/products/Web_ready_image_1_1024x1024.jpg?v=1386631815" class="zoom" id="placeholder">
           <img src="//cdn.shopify.com/s/files/1/0247/3455/products/Web_ready_image_1_1024x1024.jpg?v=1386631815" alt="Collaboration Festival">
-      </a>
+      </a> -->
 
   </div>
   <!-- End product image -->
@@ -186,7 +188,7 @@ jQuery(document).ready(function(){
       <span class="price-range" id="price-range"><?= formatPriceRange() ?></span>
 
   </div>
-  <hr class="designed grid col-860">
+  <hr class="designed grid col-940">
 </div>
 
 
@@ -206,7 +208,8 @@ jQuery(document).ready(function(){
 
 
 
-<div id="event-details" class="grid col-540">
+<div id="event-details" class="grid col-460">
+    <img src="<?= $this_event -> poster_url -> large ?>" />
     <h2>Event Details</h2>
     <div id="event-details-content">
             <?= $this_event -> description ?> <? // dangerous with html.. clean this? ?>
@@ -221,11 +224,11 @@ jQuery(document).ready(function(){
 
 </div>
 
-<div class="grid col-380 fit">
+<div class="grid col-460 fit">
 <div id="ticketing" >
   <h2>Get your tickets</h2>
 
-  <iframe id="nightout-tickets" width="100%" height="620" frameborder="0" border="0" name="Big Dog Test Event" src="https://embed.nightout.com/events/<?= $this_event -> subdomain ?>"></iframe>
+  <iframe id="nightout-tickets" width="100%" height="450" frameborder="0" border="0" name="Big Dog Test Event" src="https://embed.nightout.com/events/<?= $this_event -> subdomain ?>" style="margin-bottom: 50px;"></iframe>
 
 
   <div id="too-late" class="grid col-300">
@@ -267,7 +270,7 @@ jQuery(document).ready(function(){
 
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-<div id="map-canvas" style="height: 250px; width: 400px;"></div>
+<div id="map-canvas" style="height: 250px; width: 470px"></div>
 
 
 <!-- Begin social buttons -->
