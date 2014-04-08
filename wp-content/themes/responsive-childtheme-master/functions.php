@@ -49,3 +49,8 @@ register_sidebar( array(
 }
 
 add_action( 'widgets_init', 'responsivechild_widgets_init' );
+
+
+function responsive_post_meta_data() {
+    echo get_the_date();
+  }

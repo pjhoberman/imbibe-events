@@ -356,5 +356,26 @@ position: relative;
 }
 
 
+#wrapper {
+    border: none;
+}
+
+.post-title {
+  font-family: 'Sansita One', cursive;
+}
+
+.post {
+  border-top: 20px solid black;
+  padding-top: 35px;
+  position: relative;
+}
+
+.post-logo {
+  text-align: center;
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: -63px;
+}
 
 /*The last 29 days of the month are the hardest."- Nikola Tesla*/

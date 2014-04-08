@@ -41,6 +41,7 @@ if( !defined( 'ABSPATH' ) ) {
         <link rel="profile" href="http://gmpg.org/xfn/11"/>
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"/>
         <link rel="shortcut icon" href="/favicon.png" />
+        <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
 
 
         <?php wp_head(); ?>

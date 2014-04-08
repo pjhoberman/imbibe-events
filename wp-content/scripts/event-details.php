@@ -1,6 +1,5 @@
             <? include_once($_SERVER['DOCUMENT_ROOT'] . "/wp-content/scripts/nightout.php"); ?>
             <?php $this_event = getThisEvent($event_slug); ?>
-            <link href='http://fonts.googleapis.com/css?family=Sansita+One|Abril+Fatface|Oswald:400,700' rel='stylesheet' type='text/css'>
             <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/styles/event-details.css">
 
 <?php
