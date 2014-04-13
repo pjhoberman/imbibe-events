@@ -1,5 +1,13 @@
             <? include_once($_SERVER['DOCUMENT_ROOT'] . "/wp-content/scripts/nightout.php"); ?>
-            <?php $this_event = getThisEvent($event_slug); ?>
+            <?php
+            $this_event = getThisEvent($event_slug);
+            if(!$this_event){
+              error_log('Bad URL Request: ' . $event_slug);
+              // todo: load bad url template
+              echo "This event could not be loaded. Please check the URL and try again.";
+            } else {
+
+            ?>
             <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/styles/event-details.css">
 
 <?php
@@ -315,3 +323,4 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </div>
 <!-- End social buttons -->
 </div>
+<?php }  // end of bad url check if / else ?>
