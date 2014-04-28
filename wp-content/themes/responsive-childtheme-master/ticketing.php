@@ -29,6 +29,7 @@ get_header(); ?>
 <style type="text/css">
     #wrapper {
         padding: 0;
+        font-family: 'Lato', 'sans-serif';
     }
     #ticketing > div {
         width: 100%;
@@ -55,7 +56,6 @@ get_header(); ?>
 
     #ticketing-header p {
         font-weight: bold;
-        font-family: 'Lato', 'sans-serif';
         font-size: 16px;
         padding-right: 25px;
     }
@@ -69,14 +69,13 @@ get_header(); ?>
         text-align: center;
         margin-left: 115px;
         font-weight : bold;
-        font-family: 'Lato', 'sans-serif';
         cursor: pointer;
     }
 
     /* Our Clients */
     #our-clients {
-        border-top: 25px solid black;
-
+        border-top: 30px solid black;
+        text-align: center;
     }
 
     #our-clients img {
@@ -84,12 +83,56 @@ get_header(); ?>
         -webkit-filter: grayscale(100%);
         -moz-filter: grayscale(100%);
         filter: grayscale(100%);
+        margin: 25px;
     }
 
     #our-clients img:hover {
         -webkit-filter: grayscale(0%);
         -moz-filter: grayscale(0%);
         filter: grayscale(0%);
+    }
+
+    #our-clients > p {
+        margin-top: -25px;
+        color: #DECEA5;
+        font-family: 'Sansita One', 'cursive';
+
+    }
+
+    /* Example */
+
+    #example {
+        background: transparent url(/wp-content/imbibe-images/example-bg.jpg) top left repeat;
+        height: 435px;
+        position: relative;
+        padding-top: 70px;
+    }
+
+    #example-screenshot {
+        position: absolute;
+        top: 30px;
+        right: 70px;
+        height: 385px;
+    }
+
+    #example p {
+        width: 250px;
+        color: white;
+        padding-bottom: 25px;
+        margin-left: 115px;
+        font-size: 18px;
+    }
+
+    /* Integration */
+
+    #integration {
+        padding: 10px 0;
+    }
+
+    #integration .integration-type {
+        height: 160px;
+        width: 600px;
+        margin-bottom: 10px;
     }
 </style>
 
@@ -103,18 +146,31 @@ get_header(); ?>
     </div>
 
     <div id="our-clients">
-        Our Clients<br />
+        <p>Our Clients</p>
         <img src="/wp-content/imbibe-images/great_divide.png" />
         <img src="/wp-content/imbibe-images/great_divide.png" />
         <img src="/wp-content/imbibe-images/great_divide.png" />
     </div>
 
     <div id="example">
-        Example
+        <p><strong>Imbibe</strong> will host only the best craft events on one site. Want more exposure? Bigger reach? Great brand pairing? Let's spread our craft!</p>
+        <p><strong>And the best part? It's FREE</strong></p>
+        <div class="ticketing-button">Get started</div>
+        <img src="/wp-content/imbibe-images/example.png" id="example-screenshot" />
     </div>
 
     <div id="integration">
-        Integration
+        <div class="integration-type" style="background-color: #3B5A95; color: white;">
+            Facebook App
+        </div>
+
+        <div class="integration-type" style="background-color: #3D3D3D; color: white;">
+            Tickets Everwhere
+        </div>
+
+        <div class="integration-type" style="background-color: #CECECE; color: black;">
+            Events Everywhere
+        </div>
     </div>
 
     <div id="mobile">
