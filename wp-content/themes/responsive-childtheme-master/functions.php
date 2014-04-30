@@ -55,14 +55,3 @@ function responsive_post_meta_data() {
     echo get_the_date();
   }
 
-
-/* change viewport for ticketing on mobile */
-function viewport()
-{
-    if (is_page_template('ticketing.php')) // this is the page you need; check http://codex.wordpress.org/Function_Reference/is_page on how to use this function; you can provide as a parameter the id, title, name or an array..
-    {
-        echo '<meta name="viewport" content="width=device-width">';
-    }
-}
-// add_action('get_header', 'viewport', 100);
-add_action('wp_head', 'viewport');
