@@ -1,6 +1,11 @@
 <?php
 /* to do
  - link buttons
+ - test browsers
+ - test widths
+ - test mobile
+ - shadow?
+
 
 
 */
@@ -25,12 +30,18 @@ if( !defined( 'ABSPATH' ) ) {
  */
 
 get_header(); ?>
-<link href='http://fonts.googleapis.com/css?family=Sansita+One|Lato' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Sansita+One|Lato:400, 700, 900' rel='stylesheet' type='text/css'>
 <style type="text/css">
     #wrapper {
         padding: 0;
         font-family: 'Lato', 'sans-serif';
+        color: black;
     }
+
+    .lighter {
+        color: #555;
+    }
+
     #ticketing > div {
         width: 100%;
     }
@@ -47,7 +58,6 @@ get_header(); ?>
         height: 232px;
         margin-left: 581px;
         padding: 25px 0 0 30px;
-        color: black;
     }
 
     #ticketing-header h2 {
@@ -127,12 +137,209 @@ get_header(); ?>
 
     #integration {
         padding: 10px 0;
+        clear: both;
+        /*background-color: #F2F2F2;*/
+        margin-bottom: 10px;
+    }
+
+    .integration-types {
+        width: 600px;
+        float: left;
+        height: 470px;
     }
 
     #integration .integration-type {
         height: 160px;
         width: 600px;
         margin-bottom: 10px;
+    }
+
+    #integration .integration-title {
+        font-size: 24px;
+    }
+
+    #integration .integration-type p {
+        padding-left: 15px;
+        width: 360px;
+        margin: 0;
+        padding-top: 25px;
+    }
+
+    #integration .integration-title strong {
+        font-weight: 900;
+    }
+
+    #integration .integration-type img {
+        float: right;
+        margin-right: 70px;
+        margin-top: 10px;
+    }
+
+    #integrate-easily {
+        float: left;
+        width: 350px;
+        margin-top: 142px;
+        text-align: center;
+        margin-left: 10px;
+        /*background-color: white;*/
+    }
+
+    #integration #integrate-easily p {
+        margin-bottom: 25px;
+    }
+
+    #integrate-easily img {
+        margin: 0 10px;
+    }
+
+    /* Mobile Ready */
+
+    #mobile {
+        background: #A0A09E url(/wp-content/imbibe-images/mobile/phones.png) 400px 50px no-repeat;
+        padding-bottom: 50px;
+    }
+
+    #mobile h2 {
+        font-family: "Sansita One", cursive;
+        padding: 10px;
+        margin-top: 0;
+    }
+
+    #mobile p {
+        width: 400px;
+        padding-left: 10px;
+    }
+
+    #mobile img {
+        padding-left: 10px;
+    }
+
+    /* Stats */
+    #stats {
+        background-color: #F2F2F2;
+        margin-top: -1.6em;
+        padding-bottom: 20px;
+    }
+
+    #stats h2 {
+        font-family: "Sansita One", cursive;
+        margin-top: 0;
+        padding-top: 25px;
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    #stats .stat {
+        float: left;
+        width: 310px;
+        margin: 0 5px;
+        text-align: center;
+    }
+
+    #stats .stat h3 {
+        font-size: 16px;
+    }
+
+    /* App */
+    #app {
+        background: transparent url(/wp-content/imbibe-images/app/phone-example.png) left center no-repeat;
+        padding: 10px 0 340px 570px;
+    }
+
+    /* Features */
+    #features {
+        background-color: #00AEEA;
+        padding-top: 25px;
+    }
+
+    #features h2 {
+        font-family: "Sansita One", cursive;
+        font-size: 22px;
+        margin-top: 0;
+        margin-bottom: 50px;
+        width: 100%;
+        text-align: center;
+    }
+
+    #features .feature-container {
+        width: 750px;
+        margin: 0 auto;
+    }
+
+    #features .feature {
+        float: left;
+        width: 340px;
+        height: 120px;
+        margin: 10px;
+        padding-right: 10px;
+
+    }
+    #features h3 {
+        background: url(/wp-content/imbibe-images/features/features-sprite.png) no-repeat top left;
+        font-size: 18px;
+    }
+
+    #features .collaborators h3{ background-position: 0 0; /*width: 26px;*/ height: 26px; }
+    #features .notifications h3{ background-position: 0 -76px; /*width: 25px;*/ height: 26px; }
+    #features .payout h3{ background-position: 0 -152px; /*width: 26px;*/ height: 23px; }
+    #features .promo h3{ background-position: 0 -225px; /*width: 26px;*/ height: 26px; }
+    #features .promoters h3{ background-position: 0 -301px; /*width: 25px;*/ height: 25px; }
+    #features .sales-reports h3{ background-position: 0 -376px; /*width: 24px;*/ height: 26px; }
+    #features .subdomain h3{ background-position: 0 -452px; /*width: 26px;*/ height: 26px; }
+    #features .tracking h3{ background-position: 0 -528px; /*width: 25px;*/ height: 25px; }
+
+    #features h3, #features p {
+        padding-left: 35px;
+        margin: 0;
+    }
+
+    #features p {
+        color: #555;
+    }
+
+    /* get started */
+    #get-started {
+        background-color: black;
+        text-align: center;
+        padding-top:20px;
+        padding-bottom: 50px;
+    }
+
+    #get-started h2 {
+        font-family: "Sansita One", cursive;
+        font-size: 22px;
+        margin-top: 0;
+        margin-bottom: 50px;
+        width: 100%;
+        text-align: center;
+        color: white;
+    }
+
+    #get-started p {
+        color: #8D8D8D;
+    }
+
+    #get-started .ticketing-button {
+        margin: 0;
+        display: inline-block;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        width: 175px;
+
+    }
+
+    /* questions */
+    #questions {
+        background-color: #8D8D8D;
+        padding: 50px 0;
+    }
+
+    #questions h2 {
+        font-size: 22px;
+        margin-top: 0;
+        width: 100%;
+        text-align: center;
     }
 </style>
 
@@ -145,12 +352,14 @@ get_header(); ?>
         </div>
     </div>
 
+
     <div id="our-clients">
         <p>Our Clients</p>
         <img src="/wp-content/imbibe-images/great_divide.png" />
         <img src="/wp-content/imbibe-images/great_divide.png" />
         <img src="/wp-content/imbibe-images/great_divide.png" />
     </div>
+
 
     <div id="example">
         <p><strong>Imbibe</strong> will host only the best craft events on one site. Want more exposure? Bigger reach? Great brand pairing? Let's spread our craft!</p>
@@ -159,42 +368,153 @@ get_header(); ?>
         <img src="/wp-content/imbibe-images/example.png" id="example-screenshot" />
     </div>
 
+
     <div id="integration">
-        <div class="integration-type" style="background-color: #3B5A95; color: white;">
-            Facebook App
+        <div class="integration-types">
+            <div class="integration-type" style="background-color: #3B5A95; color: white;">
+                <p class="integration-title"><strong>Facebook</strong> App</p>
+                <p>Adds a tab on your Facebook page that lists all of your upcoming events and lets your followers buy tickets without ever leaving Facebook.</p>
+            </div>
+
+            <div class="integration-type" style="background-color: #3D3D3D; color: white;">
+                <img src="/wp-content/imbibe-images/example-tickets-everywhere.png" />
+                <p class="integration-title"><strong>Tickets</strong> Everwhere</p>
+
+                <p>Using this simple HTML snippet, you can turn your existing site or blog into a shopping cart platform! Learn more</p>
+
+            </div>
+
+            <div class="integration-type" style="background-color: #CECECE; color: black;">
+                <img src="/wp-content/imbibe-images/example-events-everywhere.png" />
+                <p class="integration-title"><strong>Events</strong> Everywhere</p>
+                <p>Place a list of your upcoming events directly onto your website or blog.</p>
+            </div>
         </div>
 
-        <div class="integration-type" style="background-color: #3D3D3D; color: white;">
-            Tickets Everwhere
+        <div id="integrate-easily">
+            <h2>Integrate Easily</h2>
+            <p>Host ticketing on your own media as well! Our technology allows you to integrate your craft event into your existing website, blog, and even Facebook</p>
+            <img src="/wp-content/imbibe-images/integrate/facebook.png" />
+            <img src="/wp-content/imbibe-images/integrate/tumblr.png" />
+            <img src="/wp-content/imbibe-images/integrate/wordpress.png" />
+            <img src="/wp-content/imbibe-images/integrate/blogger.png" />
         </div>
-
-        <div class="integration-type" style="background-color: #CECECE; color: black;">
-            Events Everywhere
-        </div>
+        <div style="clear:both;">&nbsp;</div>
     </div>
 
+
     <div id="mobile">
-        Mobile
+        <h2>Mobile Ready</h2>
+        <p>Your event page is created for simple navigation across all mobile platforms</p>
+        <img src="/wp-content/imbibe-images/mobile/versions.jpg" />
+        <p>Event pages are built for seamless navigation and optimal conversations across all mobile platforms</p>
+        <p>One touch checkout process</p>
+        <p>Expand reach to customers wherever they are</p>
+
     </div>
 
     <div id="stats">
-        Stats
+        <h2>Comprehensive Stats</h2>
+        <div class="stat">
+            <h3>Sales</h3>
+            <p>Detailed sales reports and custom tracking link, promoter, and promo code sales.</p>
+            <img src="/wp-content/imbibe-images/stats/sales.png" />
+
+        </div>
+
+        <div class="stat">
+            <h3>Insights</h3>
+            <p>Beneficial insights into your attendee's age, gender, location and platform.</p>
+            <img src="/wp-content/imbibe-images/stats/insights.png" />
+        </div>
+
+        <div class="stat">
+            <h3>Analytics</h3>
+            <p>Extensive analytics for your event's visits conversions, referral traffic, and more.</p>
+            <img src="/wp-content/imbibe-images/stats/analytics.png" />
+        </div>
+
+        <div style="clear: both; height: 1px;">&nbsp;</div>
     </div>
 
     <div id="app">
-        App
+        <h2>Entry Flow <span style="font-weight: normal;">App</span><img src="/wp-content/imbibe-images/app/free.png" style="margin-left: 10px;"/></h2>
+        <span class="lighter">Our free validation app that checks guests in with ease.</span>
+        <ul class="lighter" style="list-style-type: square; padding-left: 19px; margin-top: 10px;">
+            <li>Scan QR code on printed & digital tickets</li>
+            <li>Swipe guests by name and ticket numbers</li>
+        </ul>
+
+        <a href="" style="margin-right: 15px;"><img src="/wp-content/imbibe-images/app/app-store-button.png" /></a><a href="">View other entry solutions</a>
+
     </div>
 
     <div id="features">
-        Features
+        <h2>Plus all the features you expect<img src="/wp-content/imbibe-images/app/free.png" style="margin-left: 10px;"/></h2>
+
+        <div class="feature-container">
+            <div class="feature promo">
+
+                <h3>Promo Codes</h3>
+                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+            </div>
+
+            <div class="feature promoters">
+
+                <h3>Invite &amp; Track Promoters</h3>
+                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+            </div>
+
+            <div class="feature collaborators">
+
+                <h3>Account Collaborators</h3>
+                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+            </div>
+
+            <div class="feature notifications">
+
+                <h3>Automatic Notifications</h3>
+                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+            </div>
+
+            <div class="feature sales-reports">
+
+                <h3>Detailed Sales Reports</h3>
+                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+            </div>
+
+            <div class="feature tracking">
+
+                <h3>Custom Tracking Links</h3>
+                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+            </div>
+
+            <div class="feature subdomain">
+
+                <h3>Custom Event Sub-Domain</h3>
+                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+            </div>
+
+            <div class="feature payout">
+
+                <h3>Flexible Payout Structure</h3>
+                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+            </div>
+            <div style="clear: both;">&nbsp;</div>
+        </div>
+
+
     </div>
 
     <div id="get-started">
-        Get started
+        <h2>Ready to get started?</h2>
+        <p>Sign up now and get instant access</p>
+        <div class="ticketing-button" style="background-color: #CBB374; color: #8D8D8D;">See Pricing</div>
+        <div class="ticketing-button" style="background-color: #8D8D8D;">Start Creating Events</div>
     </div>
 
     <div id="questions">
-        Questions
+        <h2>Have Questions? <span style="font-weight: normal;">Contact us at <a href="mailto:holler@imbibedenver.com">holler@imbibedenver.com</a> or ###.###.####</span></h2>
     </div>
 </div> <!-- #ticketing -->
 
