@@ -30,7 +30,6 @@ if( !defined( 'ABSPATH' ) ) {
  */
 
 get_header(); ?>
-<meta name="viewport" content="width=device-width">
 <link href='http://fonts.googleapis.com/css?family=Sansita+One|Lato:400, 700, 900' rel='stylesheet' type='text/css'>
 <style type="text/css">
 
