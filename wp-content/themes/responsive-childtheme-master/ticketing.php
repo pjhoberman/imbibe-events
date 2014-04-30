@@ -5,6 +5,7 @@
  - test widths
  - test mobile
  - shadow?
+ - #mobile - padding on container or #mobile.. bg..
 
 
 
@@ -32,6 +33,11 @@ if( !defined( 'ABSPATH' ) ) {
 get_header(); ?>
 <link href='http://fonts.googleapis.com/css?family=Sansita+One|Lato:400, 700, 900' rel='stylesheet' type='text/css'>
 <style type="text/css">
+
+    #container {
+        max-width: 100%;
+        padding: 0;
+    }
     #wrapper {
         padding: 0;
         font-family: 'Lato', 'sans-serif';
@@ -40,6 +46,12 @@ get_header(); ?>
 
     .lighter {
         color: #555;
+    }
+
+    .interior-container {
+        max-width: 960px;
+        margin: 0 auto;
+        position: relative;
     }
 
     #ticketing > div {
@@ -195,8 +207,11 @@ get_header(); ?>
     /* Mobile Ready */
 
     #mobile {
+        background-color: #A0A09E;
+    }
+
+    #mobile .interior-container {
         background: #A0A09E url(/wp-content/imbibe-images/mobile/phones.png) 400px 50px no-repeat;
-        padding-bottom: 50px;
     }
 
     #mobile h2 {
@@ -242,9 +257,12 @@ get_header(); ?>
     }
 
     /* App */
-    #app {
-        background: transparent url(/wp-content/imbibe-images/app/phone-example.png) left center no-repeat;
+    #app .app-content{
         padding: 10px 0 340px 570px;
+    }
+
+    #app .interior-container {
+        background: transparent url(/wp-content/imbibe-images/app/phone-example.png) left center no-repeat;
     }
 
     /* Features */
@@ -345,176 +363,196 @@ get_header(); ?>
 
 <div id="ticketing">
     <div id="ticketing-header">
-        <div id="ticketing-content">
-            <h2>Online solutions for craft events</h2>
-            <p>Exclusive event ticketing & management for local events involving craft beer, spirits, and food.</p>
-            <div class="ticketing-button">Create an event</div>
+        <div class="interior-container">
+            <div id="ticketing-content">
+                <h2>Online solutions for craft events</h2>
+                <p>Exclusive event ticketing & management for local events involving craft beer, spirits, and food.</p>
+                <div class="ticketing-button">Create an event</div>
+            </div>
         </div>
     </div>
 
 
     <div id="our-clients">
-        <p>Our Clients</p>
-        <img src="/wp-content/imbibe-images/great_divide.png" />
-        <img src="/wp-content/imbibe-images/great_divide.png" />
-        <img src="/wp-content/imbibe-images/great_divide.png" />
+        <div class="interior-container">
+            <p>Our Clients</p>
+            <img src="/wp-content/imbibe-images/great_divide.png" />
+            <img src="/wp-content/imbibe-images/great_divide.png" />
+            <img src="/wp-content/imbibe-images/great_divide.png" />
+        </div>
     </div>
 
 
     <div id="example">
-        <p><strong>Imbibe</strong> will host only the best craft events on one site. Want more exposure? Bigger reach? Great brand pairing? Let's spread our craft!</p>
-        <p><strong>And the best part? It's FREE</strong></p>
-        <div class="ticketing-button">Get started</div>
-        <img src="/wp-content/imbibe-images/example.png" id="example-screenshot" />
+        <div class="interior-container">
+            <p><strong>Imbibe</strong> will host only the best craft events on one site. Want more exposure? Bigger reach? Great brand pairing? Let's spread our craft!</p>
+            <p><strong>And the best part? It's FREE</strong></p>
+            <div class="ticketing-button">Get started</div>
+            <img src="/wp-content/imbibe-images/example.png" id="example-screenshot" />
+        </div>
     </div>
 
 
     <div id="integration">
-        <div class="integration-types">
-            <div class="integration-type" style="background-color: #3B5A95; color: white;">
-                <p class="integration-title"><strong>Facebook</strong> App</p>
-                <p>Adds a tab on your Facebook page that lists all of your upcoming events and lets your followers buy tickets without ever leaving Facebook.</p>
+        <div class="interior-container">
+            <div class="integration-types">
+                <div class="integration-type" style="background-color: #3B5A95; color: white;">
+                    <p class="integration-title"><strong>Facebook</strong> App</p>
+                    <p>Adds a tab on your Facebook page that lists all of your upcoming events and lets your followers buy tickets without ever leaving Facebook.</p>
+                </div>
+
+                <div class="integration-type" style="background-color: #3D3D3D; color: white;">
+                    <img src="/wp-content/imbibe-images/example-tickets-everywhere.png" />
+                    <p class="integration-title"><strong>Tickets</strong> Everwhere</p>
+
+                    <p>Using this simple HTML snippet, you can turn your existing site or blog into a shopping cart platform! Learn more</p>
+
+                </div>
+
+                <div class="integration-type" style="background-color: #CECECE; color: black;">
+                    <img src="/wp-content/imbibe-images/example-events-everywhere.png" />
+                    <p class="integration-title"><strong>Events</strong> Everywhere</p>
+                    <p>Place a list of your upcoming events directly onto your website or blog.</p>
+                </div>
             </div>
 
-            <div class="integration-type" style="background-color: #3D3D3D; color: white;">
-                <img src="/wp-content/imbibe-images/example-tickets-everywhere.png" />
-                <p class="integration-title"><strong>Tickets</strong> Everwhere</p>
-
-                <p>Using this simple HTML snippet, you can turn your existing site or blog into a shopping cart platform! Learn more</p>
-
+            <div id="integrate-easily">
+                <h2>Integrate Easily</h2>
+                <p>Host ticketing on your own media as well! Our technology allows you to integrate your craft event into your existing website, blog, and even Facebook</p>
+                <img src="/wp-content/imbibe-images/integrate/facebook.png" />
+                <img src="/wp-content/imbibe-images/integrate/tumblr.png" />
+                <img src="/wp-content/imbibe-images/integrate/wordpress.png" />
+                <img src="/wp-content/imbibe-images/integrate/blogger.png" />
             </div>
-
-            <div class="integration-type" style="background-color: #CECECE; color: black;">
-                <img src="/wp-content/imbibe-images/example-events-everywhere.png" />
-                <p class="integration-title"><strong>Events</strong> Everywhere</p>
-                <p>Place a list of your upcoming events directly onto your website or blog.</p>
-            </div>
+            <div style="clear:both;">&nbsp;</div>
         </div>
-
-        <div id="integrate-easily">
-            <h2>Integrate Easily</h2>
-            <p>Host ticketing on your own media as well! Our technology allows you to integrate your craft event into your existing website, blog, and even Facebook</p>
-            <img src="/wp-content/imbibe-images/integrate/facebook.png" />
-            <img src="/wp-content/imbibe-images/integrate/tumblr.png" />
-            <img src="/wp-content/imbibe-images/integrate/wordpress.png" />
-            <img src="/wp-content/imbibe-images/integrate/blogger.png" />
-        </div>
-        <div style="clear:both;">&nbsp;</div>
     </div>
 
 
     <div id="mobile">
-        <h2>Mobile Ready</h2>
-        <p>Your event page is created for simple navigation across all mobile platforms</p>
-        <img src="/wp-content/imbibe-images/mobile/versions.jpg" />
-        <p>Event pages are built for seamless navigation and optimal conversations across all mobile platforms</p>
-        <p>One touch checkout process</p>
-        <p>Expand reach to customers wherever they are</p>
-
+        <div class="interior-container">
+            <h2>Mobile Ready</h2>
+            <p>Your event page is created for simple navigation across all mobile platforms</p>
+            <img src="/wp-content/imbibe-images/mobile/versions.jpg" />
+            <p>Event pages are built for seamless navigation and optimal conversations across all mobile platforms</p>
+            <p>One touch checkout process</p>
+            <p>Expand reach to customers wherever they are</p>
+        </div>
     </div>
 
     <div id="stats">
-        <h2>Comprehensive Stats</h2>
-        <div class="stat">
-            <h3>Sales</h3>
-            <p>Detailed sales reports and custom tracking link, promoter, and promo code sales.</p>
-            <img src="/wp-content/imbibe-images/stats/sales.png" />
+        <div class="interior-container">
+            <h2>Comprehensive Stats</h2>
+            <div class="stat">
+                <h3>Sales</h3>
+                <p>Detailed sales reports and custom tracking link, promoter, and promo code sales.</p>
+                <img src="/wp-content/imbibe-images/stats/sales.png" />
 
+            </div>
+
+            <div class="stat">
+                <h3>Insights</h3>
+                <p>Beneficial insights into your attendee's age, gender, location and platform.</p>
+                <img src="/wp-content/imbibe-images/stats/insights.png" />
+            </div>
+
+            <div class="stat">
+                <h3>Analytics</h3>
+                <p>Extensive analytics for your event's visits conversions, referral traffic, and more.</p>
+                <img src="/wp-content/imbibe-images/stats/analytics.png" />
+            </div>
+
+            <div style="clear: both; height: 1px;">&nbsp;</div>
         </div>
-
-        <div class="stat">
-            <h3>Insights</h3>
-            <p>Beneficial insights into your attendee's age, gender, location and platform.</p>
-            <img src="/wp-content/imbibe-images/stats/insights.png" />
-        </div>
-
-        <div class="stat">
-            <h3>Analytics</h3>
-            <p>Extensive analytics for your event's visits conversions, referral traffic, and more.</p>
-            <img src="/wp-content/imbibe-images/stats/analytics.png" />
-        </div>
-
-        <div style="clear: both; height: 1px;">&nbsp;</div>
     </div>
 
     <div id="app">
-        <h2>Entry Flow <span style="font-weight: normal;">App</span><img src="/wp-content/imbibe-images/app/free.png" style="margin-left: 10px;"/></h2>
-        <span class="lighter">Our free validation app that checks guests in with ease.</span>
-        <ul class="lighter" style="list-style-type: square; padding-left: 19px; margin-top: 10px;">
-            <li>Scan QR code on printed & digital tickets</li>
-            <li>Swipe guests by name and ticket numbers</li>
-        </ul>
+        <div class="interior-container">
+            <div class="app-content">
+                <h2>Entry Flow <span style="font-weight: normal;">App</span><img src="/wp-content/imbibe-images/app/free.png" style="margin-left: 10px;"/></h2>
+                <span class="lighter">Our free validation app that checks guests in with ease.</span>
+                <ul class="lighter" style="list-style-type: square; padding-left: 19px; margin-top: 10px;">
+                    <li>Scan QR code on printed & digital tickets</li>
+                    <li>Swipe guests by name and ticket numbers</li>
+                </ul>
 
-        <a href="" style="margin-right: 15px;"><img src="/wp-content/imbibe-images/app/app-store-button.png" /></a><a href="">View other entry solutions</a>
-
+                <a href="" style="margin-right: 15px;"><img src="/wp-content/imbibe-images/app/app-store-button.png" /></a><a href="">View other entry solutions</a>
+            </div>
+        </div>
     </div>
 
     <div id="features">
-        <h2>Plus all the features you expect<img src="/wp-content/imbibe-images/app/free.png" style="margin-left: 10px;"/></h2>
+        <div class="interior-container">
+            <h2>Plus all the features you expect<img src="/wp-content/imbibe-images/app/free.png" style="margin-left: 10px;"/></h2>
 
-        <div class="feature-container">
-            <div class="feature promo">
+            <div class="feature-container">
+                <div class="feature promo">
 
-                <h3>Promo Codes</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
-            </div>
+                    <h3>Promo Codes</h3>
+                    <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                </div>
 
-            <div class="feature promoters">
+                <div class="feature promoters">
 
-                <h3>Invite &amp; Track Promoters</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
-            </div>
+                    <h3>Invite &amp; Track Promoters</h3>
+                    <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                </div>
 
-            <div class="feature collaborators">
+                <div class="feature collaborators">
 
-                <h3>Account Collaborators</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
-            </div>
+                    <h3>Account Collaborators</h3>
+                    <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                </div>
 
-            <div class="feature notifications">
+                <div class="feature notifications">
 
-                <h3>Automatic Notifications</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
-            </div>
+                    <h3>Automatic Notifications</h3>
+                    <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                </div>
 
-            <div class="feature sales-reports">
+                <div class="feature sales-reports">
 
-                <h3>Detailed Sales Reports</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
-            </div>
+                    <h3>Detailed Sales Reports</h3>
+                    <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                </div>
 
-            <div class="feature tracking">
+                <div class="feature tracking">
 
-                <h3>Custom Tracking Links</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
-            </div>
+                    <h3>Custom Tracking Links</h3>
+                    <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                </div>
 
-            <div class="feature subdomain">
+                <div class="feature subdomain">
 
-                <h3>Custom Event Sub-Domain</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
-            </div>
+                    <h3>Custom Event Sub-Domain</h3>
+                    <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                </div>
 
-            <div class="feature payout">
+                <div class="feature payout">
 
-                <h3>Flexible Payout Structure</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
-            </div>
-            <div style="clear: both;">&nbsp;</div>
+                    <h3>Flexible Payout Structure</h3>
+                    <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                </div>
+                <div style="clear: both;">&nbsp;</div>
         </div>
+    </div>
 
 
     </div>
 
     <div id="get-started">
-        <h2>Ready to get started?</h2>
-        <p>Sign up now and get instant access</p>
-        <div class="ticketing-button" style="background-color: #CBB374; color: #8D8D8D;">See Pricing</div>
-        <div class="ticketing-button" style="background-color: #8D8D8D;">Start Creating Events</div>
+        <div class="interior-container">
+            <h2>Ready to get started?</h2>
+            <p>Sign up now and get instant access</p>
+            <div class="ticketing-button" style="background-color: #CBB374; color: #8D8D8D;">See Pricing</div>
+            <div class="ticketing-button" style="background-color: #8D8D8D;">Start Creating Events</div>
+        </div>
     </div>
 
     <div id="questions">
-        <h2>Have Questions? <span style="font-weight: normal;">Contact us at <a href="mailto:holler@imbibedenver.com">holler@imbibedenver.com</a> or ###.###.####</span></h2>
+        <div class="interior-container">
+            <h2>Have Questions? <span style="font-weight: normal;">Contact us at <a href="mailto:holler@imbibedenver.com">holler@imbibedenver.com</a> or ###.###.####</span></h2>
+        </div>
     </div>
 </div> <!-- #ticketing -->
 
