@@ -6,6 +6,7 @@
  - test mobile
  - shadow?
  - #mobile - padding on container or #mobile.. bg..
+ - #our-clients - border top thing
 
 
 
@@ -34,6 +35,11 @@ get_header(); ?>
 <link href='http://fonts.googleapis.com/css?family=Sansita+One|Lato:400, 700, 900' rel='stylesheet' type='text/css'>
 <style type="text/css">
 
+    #header {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
     #container {
         max-width: 100%;
         padding: 0;
@@ -49,13 +55,14 @@ get_header(); ?>
     }
 
     .interior-container {
-        max-width: 960px;
+        width: 960px;
         margin: 0 auto;
         position: relative;
     }
 
     #ticketing > div {
         width: 100%;
+        min-width: 960px;
     }
 
     /* Ticketing Header */
@@ -114,7 +121,7 @@ get_header(); ?>
         filter: grayscale(0%);
     }
 
-    #our-clients > p {
+    #our-clients p {
         margin-top: -25px;
         color: #DECEA5;
         font-family: 'Sansita One', 'cursive';
@@ -212,6 +219,10 @@ get_header(); ?>
 
     #mobile .interior-container {
         background: #A0A09E url(/wp-content/imbibe-images/mobile/phones.png) 400px 50px no-repeat;
+    }
+
+    #mobile, #mobile .interior-container {
+        padding-bottom: 25px;
     }
 
     #mobile h2 {
