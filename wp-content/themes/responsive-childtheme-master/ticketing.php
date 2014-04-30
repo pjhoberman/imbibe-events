@@ -2,11 +2,9 @@
 /* to do
  - link buttons
  - test browsers
- - test widths
+ - test widths --> not responsive, but it works
  - test mobile
- - shadow?
- - #mobile - padding on container or #mobile.. bg..
- - #our-clients - border top thing
+
 
 
 
@@ -139,7 +137,7 @@ get_header(); ?>
 
     #example-screenshot {
         position: absolute;
-        top: 30px;
+        top: 0;
         right: 70px;
         height: 385px;
     }
@@ -222,7 +220,7 @@ get_header(); ?>
     }
 
     #mobile, #mobile .interior-container {
-        padding-bottom: 25px;
+        padding-bottom: 22px;
     }
 
     #mobile h2 {
