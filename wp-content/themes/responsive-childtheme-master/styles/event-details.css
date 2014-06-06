@@ -87,6 +87,10 @@ margin: 0;
         margin-top: 0;
     }
 
+    #event-details h2, #ticketing h2 {
+        font-family: 'Sansita One', cursive;
+    }
+
     #ticker {
      background: white url(/wp-content/imbibe-images/All-ticker.png) no-repeat 0 0;
      margin: 15px auto;
@@ -192,3 +196,4 @@ margin: 0;
  border: none;
  color: inherit;
 }
+
