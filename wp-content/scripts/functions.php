@@ -122,4 +122,3 @@ function og_title($title) {
 
     return $title;
 }
-
