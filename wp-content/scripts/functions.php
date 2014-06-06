@@ -50,7 +50,7 @@ function prefix_url_rewrite_templates() {
                 $event_description = ": Imbibe is craft events. We specialize in craft beer and spirit events and ticketing.";
             }
             $event_description = $this_event -> title . " - " . $event_description;
-            $event_description = htmlspecialchars($event_description);
+            $event_description = htmlspecialchars(strip_tags($event_description));
 
             ?>
          <!-- for Google -->
