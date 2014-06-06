@@ -365,8 +365,14 @@ get_header(); ?>
     <div id="our-clients">
         <p>Our Clients</p>
         <img src="/wp-content/imbibe-images/great_divide.png" />
-        <img src="/wp-content/imbibe-images/great_divide.png" />
-        <img src="/wp-content/imbibe-images/great_divide.png" />
+        <img src="/wp-content/imbibe-images/d-still.jpg" />
+        <img src="/wp-content/imbibe-images/new-belgium.jpg" />
+        <img src="/wp-content/imbibe-images/breck.png" />
+        <img src="/wp-content/imbibe-images/festivus.png" />
+        <img src="/wp-content/imbibe-images/eatDenver.jpg" />
+        <img src="/wp-content/imbibe-images/cbg.png" />
+        <img src="/wp-content/imbibe-images/collab-fest.jpg" />
+        <img src="/wp-content/imbibe-images/epic.jpg" />
     </div>
 
 
