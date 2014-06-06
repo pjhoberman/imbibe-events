@@ -52,7 +52,8 @@ if( !defined( 'ABSPATH' ) ) {
         <link rel="shortcut icon" href="/favicon.png" />
         <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
 
-
+        <!-- facebook admin meta -->
+        <meta property="fb:admins" content="30000465" />
         <?php wp_head(); ?>
     </head>
 
