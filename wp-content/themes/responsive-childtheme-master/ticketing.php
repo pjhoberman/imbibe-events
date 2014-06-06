@@ -46,6 +46,15 @@ get_header(); ?>
         width: 100%;
     }
 
+    #ticketing a {
+        color: inherit;
+        font-weight: inherit;
+    }
+
+    #ticketing a:hover {
+        color: inherit;
+    }
+
     /* Ticketing Header */
     #ticketing-header {
         background: transparent url(/wp-content/imbibe-images/ticketing-header.jpg) center center no-repeat;
@@ -348,7 +357,7 @@ get_header(); ?>
         <div id="ticketing-content">
             <h2>Online solutions for craft events</h2>
             <p>Exclusive event ticketing & management for local events involving craft beer, spirits, and food.</p>
-            <div class="ticketing-button">Create an event</div>
+            <div class="ticketing-button"><a href="http://imbibe.nightout.com/signup">Create an event</a></div>
         </div>
     </div>
 
@@ -364,7 +373,7 @@ get_header(); ?>
     <div id="example">
         <p><strong>Imbibe</strong> will host only the best craft events on one site. Want more exposure? Bigger reach? Great brand pairing? Let's spread our craft!</p>
         <p><strong>And the best part? It's FREE</strong></p>
-        <div class="ticketing-button">Get started</div>
+        <div class="ticketing-button"><a href="http://imbibe.nightout.com/signup">Get started</a></div>
         <img src="/wp-content/imbibe-images/example.png" id="example-screenshot" />
     </div>
 
@@ -378,7 +387,7 @@ get_header(); ?>
 
             <div class="integration-type" style="background-color: #3D3D3D; color: white;">
                 <img src="/wp-content/imbibe-images/example-tickets-everywhere.png" />
-                <p class="integration-title"><strong>Tickets</strong> Everwhere</p>
+                <p class="integration-title"><strong>Tickets</strong> Everywhere</p>
 
                 <p>Using this simple HTML snippet, you can turn your existing site or blog into a shopping cart platform! Learn more</p>
 
@@ -510,11 +519,11 @@ get_header(); ?>
         <h2>Ready to get started?</h2>
         <p>Sign up now and get instant access</p>
         <div class="ticketing-button" style="background-color: #CBB374; color: #8D8D8D;">See Pricing</div>
-        <div class="ticketing-button" style="background-color: #8D8D8D;">Start Creating Events</div>
+        <div class="ticketing-button" style="background-color: #8D8D8D;"><a href="http://imbibe.nightout.com/signup">Start Creating Events</a></div>
     </div>
 
     <div id="questions">
-        <h2>Have Questions? <span style="font-weight: normal;">Contact us at <a href="mailto:holler@imbibedenver.com">holler@imbibedenver.com</a> or ###.###.####</span></h2>
+        <h2>Have Questions? <span style="font-weight: normal;">Contact us at <a href="mailto:holler@imbibedenver.com" style="text-decoration:underline;">holler@imbibedenver.com</a> or 720.722.1223</span></h2>
     </div>
 </div> <!-- #ticketing -->
 
