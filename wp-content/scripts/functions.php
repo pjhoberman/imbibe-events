@@ -55,9 +55,10 @@ function prefix_url_rewrite_templates() {
             $event_description = preg_replace($pattern, "", $event_description);
             $event_description = htmlspecialchars(strip_tags($event_description));
 
+            $og_title = $this_event -> title . " - Imbibe Events";
             ?>
 
-            <title><?= $this_event -> title ?> - Imbibe Events</title>
+            <title><?= $og_title ?></title>
          <!-- for Google -->
         <meta name="description" content="<?= $event_description ?>" />
         <meta name="keywords" content="<?= $this_event -> title ?>, craft, events, craft beer, spirits, ticketing, tickets, festivals" />
@@ -68,18 +69,18 @@ function prefix_url_rewrite_templates() {
 
         <!-- for Facebook -->
 
-        <meta property="og:title" content="<?= $this_event -> title; ?>" />
+        <meta property="og:title" content="<?= $og_title ?>" />
         <meta property="og:image" content="<?= $this_event -> poster_url -> large ?>" />
         <meta property="og:url" content="<?= get_site_url() . $_SERVER['REQUEST_URI']; ?>" />
         <meta property="og:description" content="<?= $event_description ?>" />
 
         <!-- for Twitter -->
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="<?= $this_event -> title ?>" />
+        <meta name="twitter:title" content="<?= $og_title ?>" />
         <meta name="twitter:description" content="<?= $event_description ?>" />
         <meta name="twitter:image" content="<?= $this_event -> poster_url -> large ?>" />
 
-        <title><?php wp_title( '&#124;', true, 'right' ); ?></title>
+        <!-- <title><?php wp_title( '&#124;', true, 'right' ); ?></title> -->
             <?
         });
 
