@@ -70,6 +70,20 @@ function prefix_url_rewrite_templates() {
         <title><?php wp_title( '&#124;', true, 'right' ); ?></title>
             <?
         });
+
+    //Remover YOAST na página de empresas
+    add_filter( 'wpseo_canonical', 'wpseo_canonical_exclude' );
+    function wpseo_canonical_exclude( $canonical ) {
+        $canonical = false;
+        return $canonical;
+    }
+    add_filter( 'wpseo_description', 'wpseo_description_exclude' );
+    function wpseo_description_exclude( $description ) {
+        $description = false;
+        return $description;
+    }
+
+
     }
 }
 
