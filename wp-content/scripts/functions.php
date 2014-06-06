@@ -57,7 +57,7 @@ function prefix_url_rewrite_templates() {
             $event_description = preg_replace($pattern, "", $event_description);
             $event_description = htmlspecialchars(strip_tags($event_description));
 
-            $og_title = $this_event -> title . " - Imbibe Events";
+            $og_title = $this_event -> title . " | Imbibe Events";
 
 
             ?>
@@ -110,11 +110,16 @@ add_action( 'template_redirect', 'prefix_url_rewrite_templates' );
 
 
 
-        add_filter( 'wp_title', 'og_title', 20 );
-        function og_title($title) {
-            global $event_slug, $this_event;
-            $this_event = getThisEvent($event_slug);
-            $title = $this_event -> title . " - Imbibe Events";
-            return $title;
-        }
+add_filter( 'wp_title', 'og_title', 20 );
+function og_title($title) {
+    global $event_slug, $this_event;
+    if ($event_slug === ""){
+        $title = wp_title();
+    } else {
+        $this_event = getThisEvent($event_slug);
+        $title = $this_event -> title . " | Imbibe Events";
+    }
+
+    return $title;
+}
 
