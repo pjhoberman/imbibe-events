@@ -53,7 +53,7 @@ if( !defined( 'ABSPATH' ) ) {
         <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
 
         <!-- facebook admin meta -->
-        <meta property="fb:admins" content="30000465" />
+        <meta property="fb:admins" content="30000465, 44701590" />
         <?php wp_head(); ?>
     </head>
 
