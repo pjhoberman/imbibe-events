@@ -51,11 +51,13 @@ function prefix_url_rewrite_templates() {
             }
             $event_description = $this_event -> title . " - " . $event_description;
             // make it a summary - cut it at first line break (p, br, div)
-            $pattern = '/(<\/p.*|<br.*|<\/div.*)/i';
+            $pattern = '/(<\/p.*|<br.*|<\/div.*)/is';
             $event_description = preg_replace($pattern, "", $event_description);
             $event_description = htmlspecialchars(strip_tags($event_description));
 
             ?>
+
+            <title><?= $this_event -> title ?> - Imbibe Events</title>
          <!-- for Google -->
         <meta name="description" content="<?= $event_description ?>" />
         <meta name="keywords" content="<?= $this_event -> title ?>, craft, events, craft beer, spirits, ticketing, tickets, festivals" />
