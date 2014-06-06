@@ -365,7 +365,7 @@ position: relative;
 }
 
 .post {
-  border-top: 20px solid black;
+  border-top: 20px solid rgba(0,0,0,.75);
   padding-top: 35px;
   position: relative;
 }

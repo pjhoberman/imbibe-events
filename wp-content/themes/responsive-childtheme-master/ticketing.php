@@ -95,6 +95,7 @@ get_header(); ?>
     #our-clients {
         border-top: 30px solid black;
         text-align: center;
+        margin-top:15px;
     }
 
     #our-clients img {
