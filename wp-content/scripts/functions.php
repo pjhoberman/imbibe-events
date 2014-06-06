@@ -2,7 +2,7 @@
 /*************************/
 /* PJ's added functions */
 /************************/
-
+require_once($_SERVER['DOCUMENT_ROOT'] . "/wp-content/scripts/nightout.php");
 
 function set_nightout_globals() {
         global $api_url, $api_oauth_string, $api_org_ids, $api_all_events_url;
@@ -40,7 +40,9 @@ function prefix_url_rewrite_templates() {
         });
 
         // todo - might make sense to move this to a different function...
-        require_once($_SERVER['DOCUMENT_ROOT'] . "/wp-content/scripts/nightout.php");
+
+
+
         add_action('wp_head', function(){
             global $event_slug, $this_event;
             $this_event = getThisEvent($event_slug);
@@ -56,9 +58,10 @@ function prefix_url_rewrite_templates() {
             $event_description = htmlspecialchars(strip_tags($event_description));
 
             $og_title = $this_event -> title . " - Imbibe Events";
+
+
             ?>
 
-            <title><?= $og_title ?></title>
          <!-- for Google -->
         <meta name="description" content="<?= $event_description ?>" />
         <meta name="keywords" content="<?= $this_event -> title ?>, craft, events, craft beer, spirits, ticketing, tickets, festivals" />
@@ -80,7 +83,6 @@ function prefix_url_rewrite_templates() {
         <meta name="twitter:description" content="<?= $event_description ?>" />
         <meta name="twitter:image" content="<?= $this_event -> poster_url -> large ?>" />
 
-        <!-- <title><?php wp_title( '&#124;', true, 'right' ); ?></title> -->
             <?
         });
 
@@ -95,11 +97,7 @@ function prefix_url_rewrite_templates() {
         $description = false;
         return $description;
     }
-    add_filter( 'wpseo_title', 'wpseo_title_exclude' );
-    function wpseo_title_exclude( $title ) {
-        $title = false;
-        return $title;
-    }
+
     // end of making sense
 
     }
@@ -109,4 +107,14 @@ add_action( 'template_redirect', 'prefix_url_rewrite_templates' );
 
 
 /* end Event Details redirect */
+
+
+
+        add_filter( 'wp_title', 'og_title', 20 );
+        function og_title($title) {
+            global $event_slug, $this_event;
+            $this_event = getThisEvent($event_slug);
+            $title = $this_event -> title . " - Imbibe Events";
+            return $title;
+        }
 
