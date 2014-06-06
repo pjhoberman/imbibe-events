@@ -1,5 +1,6 @@
-            <? include_once($_SERVER['DOCUMENT_ROOT'] . "/wp-content/scripts/nightout.php"); ?>
+            <? require_once($_SERVER['DOCUMENT_ROOT'] . "/wp-content/scripts/nightout.php"); ?>
             <?php
+
             $this_event = getThisEvent($event_slug);
             if(!$this_event){
               error_log('Bad URL Request: ' . $event_slug);

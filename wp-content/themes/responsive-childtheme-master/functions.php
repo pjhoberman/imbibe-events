@@ -54,3 +54,9 @@ add_action( 'widgets_init', 'responsivechild_widgets_init' );
 function responsive_post_meta_data() {
     echo get_the_date();
   }
+
+// function set_event_globals(){
+//   echo get_page_template();
+// }
+
+// add_action('wp_head', 'set_event_globals');

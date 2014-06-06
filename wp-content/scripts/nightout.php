@@ -1,9 +1,9 @@
 <?php
 
-$api_url = "https://nightout.com/api/events";
-$api_oauth_string = "?oauth_token=3d4zpwlv3g3wmt30x7rqvcosyl57btu";
-$api_org_ids = "&organization_ids=357,358,576,617,625,592,246,639";
-$api_all_events_url = $api_url . $api_oauth_string . $api_org_ids;
+// $api_url = "https://nightout.com/api/events";
+// $api_oauth_string = "?oauth_token=3d4zpwlv3g3wmt30x7rqvcosyl57btu";
+// $api_org_ids = "&organization_ids=357,358,576,617,625,592,246,639";
+// $api_all_events_url = $api_url . $api_oauth_string . $api_org_ids;
 
 function getEventURL($id) {
     // not currently in use
@@ -41,7 +41,6 @@ function get_http_response_code($url) {
 function getThisEvent($slug){
     global $api_url, $api_oauth_string;
     $event_url = $api_url . '/' . $slug . $api_oauth_string . '&details=full';
-
     if ( get_http_response_code($event_url) != "404" ) {
         return json_decode(file_get_contents($event_url));
     } else {

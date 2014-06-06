@@ -24,6 +24,7 @@ get_header(); ?>
 
 <!-- <div id="content" class="<?php echo implode( ' ', responsive_get_content_classes() ); ?>"> -->
 <div id="content" class="grid col-940">
+<?php //include_once($_SERVER['DOCUMENT_ROOT'] . "/wp-content/scripts/event-details.php"); ?>
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . "/wp-content/scripts/event-details.php"); ?>
 <?php /*
 // Block all the post stuff for now //

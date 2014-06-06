@@ -19,6 +19,7 @@ if( !defined( 'ABSPATH' ) ) {
  * @link           http://codex.wordpress.org/Theme_Development#Document_Head_.28header.php.29
  * @since          available since Release 1.0
  */
+
 ?>
     <!doctype html>
     <!--[if !IE]>
@@ -35,6 +36,14 @@ if( !defined( 'ABSPATH' ) ) {
 
         <meta charset="<?php bloginfo( 'charset' ); ?>"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- for Google -->
+        <meta name="description" content="Imbibe is craft events. We specialize in craft beer and spirit events and ticketing." />
+        <meta name="keywords" content="craft, events, craft beer, spirits, ticketing, tickets, festivals" />
+
+        <meta name="author" content="Imbibe" />
+        <meta name="copyright" content="<?= date("Y"); ?>" />
+        <meta name="application-name" content="Imbibe Events" />
 
         <title><?php wp_title( '&#124;', true, 'right' ); ?></title>
 
