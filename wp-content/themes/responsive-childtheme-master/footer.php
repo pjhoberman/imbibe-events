@@ -60,6 +60,41 @@ $responsive_options = responsive_get_options();
             </div>
             <!-- end of col-380 fit -->
 
+            <script type="text/javascript">
+            jQuery(document).ready( function () {
+                var jQueryform = jQuery('#mc-embedded-subscribe-form');
+
+                if ( jQueryform.length > 0 ) {
+                    jQuery('form input[type="submit"]').bind('click', function ( event ) {
+                        if ( event ) event.preventDefault();
+                    // validate_input() is a validation function I wrote, you'll have to substitute this with your own.
+                    register(jQueryform);
+                    // if ( validate_input(jQueryform) ) { register(jQueryform); }
+                });
+                }
+            });
+
+            function register(jQueryform) {
+                jQuery.ajax({
+                    type: jQueryform.attr('method'),
+                    url: jQueryform.attr('action'),
+                    data: jQueryform.serialize(),
+                    cache       : false,
+                    dataType    : 'json',
+                    contentType: "application/json; charset=utf-8",
+                    error       : function(err) { console.log("Could not connect to the registration server. Please try again later."); console.log(err)},
+                    success     : function(data) {
+                        console.log(data);
+                        if (data.result != "success") {
+                        // Something went wrong, do something to notify the user. maybe alert(data.msg);
+                    } else {
+                        // It worked, carry on...
+                    }
+                }
+            });
+            }
+            </script>
+
             <div class="grid col-460">
                 <!-- Begin MailChimp Signup Form -->
                 <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
@@ -70,7 +105,7 @@ $responsive_options = responsive_get_options();
                 </style>
                 <div id="mc_embed_signup">
                     <h4><label for="mce-EMAIL" style="padding: 0;">Sign up to learn about events and cool stuff</label></h4>
-                <form action="http://imbibedenver.us4.list-manage.com/subscribe/post?u=7ac95e8ad52ca60aca50afc48&amp;id=396c7d3287" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate style="padding: 0;">
+                <form action="http://imbibedenver.us4.list-manage.com/subscribe/post-json?u=7ac95e8ad52ca60aca50afc48&amp;id=396c7d3287" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate style="padding: 0;">
                     <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
                     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                     <div style="position: absolute; left: -5000px;"><input type="text" name="b_7ac95e8ad52ca60aca50afc48_396c7d3287" value=""></div>
