@@ -65,18 +65,23 @@ $responsive_options = responsive_get_options();
             // http://designshack.net/articles/css/custom-mailchimp-email-signup-form/
             ?>
 
-            <script type="text/javascript">
-            jQuery(document).ready( function () {
-                var jQueryform = jQuery('#mc-embedded-subscribe-form');
 
-                if ( jQueryform.length > 0 ) {
-                    jQuery('form input[type="submit"]').bind('click', function ( event ) {
+
+            <script type="text/javascript">
+
+            // todo - remove all the IDs and make it class based
+            // move all this code to external files
+            jQuery(document).ready( function () {
+                // var jQueryform = jQuery('.mailchimp-form');
+
+                // if ( jQueryform.length > 0 ) {
+                    jQuery('.mailchimp-form').on('submit', function ( event ) {
                         if ( event ) event.preventDefault();
                     // validate_input() is a validation function I wrote, you'll have to substitute this with your own.
-                    register(jQueryform);
+                    register(jQuery(this));
                     // if ( validate_input(jQueryform) ) { register(jQueryform); }
                 });
-                }
+                // }
             });
 
             function register(jQueryform) {
@@ -87,21 +92,22 @@ $responsive_options = responsive_get_options();
                 cache       : false,
                 dataType    : 'json',
                 contentType: "application/json; charset=utf-8",
-                error       : function(err) { jQuery('#notification_container').html('<span class="alert">Could not connect to server. Please try again later.</span>'); },
+                error       : function(err) {
+                    jQueryform.find('.notification_container, .popup_notification_container').html('<span class="alert">Could not connect to server. Please try again later.</span>');
+                },
                 success     : function(data) {
-
                   if (data.result != "success") {
                     if( ! isNaN(data.msg.charAt(0) * 1 )) {
                         var message = data.msg.substring(4);
                     } else {
                         var message = data.msg;
                     }
-                    jQuery('#notification_container').html('<span class="alert">'+message+'</span>');
+                    jQueryform.find('.notification_container, .popup_notification_container').html('<span class="alert">'+message+'</span>');
                   }
 
                   else {
                     var message = data.msg;
-                    jQuery('#notification_container').html('<span class="success">'+message+'</span>');
+                   jQueryform.find('.notification_container, .popup_notification_container').html('<span class="success">'+message+'</span>');
                   }
                 }
               });
@@ -170,13 +176,13 @@ $responsive_options = responsive_get_options();
 }
 
 /** Custom Styles **/
-#notification_container {
+.notification_container {
   display: block;
   margin: 0 auto;
   padding-top: 25px;
 }
 
-#notification_container .alert {
+.notification_container .alert {
   display: block;
   width: 100%;
   padding: 11px 20px;
@@ -198,7 +204,7 @@ $responsive_options = responsive_get_options();
   background-image: linear-gradient(top, #e3cb77, #f4e4a8);
 }
 
-#notification_container .success {
+.notification_container .success {
   display: block;
   width: 100%;
   padding: 11px 20px;
@@ -231,13 +237,14 @@ $responsive_options = responsive_get_options();
                 </style>
                 <div id="mc_embed_signup">
                     <h4><label for="mce-EMAIL" style="padding: 0;">Sign up to learn about events and cool stuff</label></h4>
-                <form action="http://imbibedenver.us4.list-manage.com/subscribe/post-json?u=7ac95e8ad52ca60aca50afc48&amp;id=396c7d3287&amp;c=?" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate style="padding: 0;">
+                <form action="http://imbibedenver.us4.list-manage.com/subscribe/post-json?u=7ac95e8ad52ca60aca50afc48&amp;id=396c7d3287&amp;c=?" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate mailchimp-form" target="_blank" novalidate style="padding: 0;">
                     <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
                     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                     <div style="position: absolute; left: -5000px;"><input type="text" name="b_7ac95e8ad52ca60aca50afc48_396c7d3287" value=""></div>
                     <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-image: none;"></div>
+                    <div class="notification_container"></div>
                 </form>
-                <div id="notification_container"></div>
+
                 </div>
 
                 <!--End mc_embed_signup-->
