@@ -41,11 +41,26 @@ function po_removeMessageBox() {
 }
 
 function po_loadMessageBox( ) {
-
+	var jW = jQuery(window);
+	if (jW.height() < 600 || jW.width() < 600) {
+		// don't display;
+		return false;
+	}
 	if( popover.usejs == 'yes' ) {
 
-		jQuery('#' + popover.divname ).width(jQuery('#message').width());
-		jQuery('#' + popover.divname ).height(jQuery('#message').height() + 20);
+	    var new_width = jQuery('#message').width(),
+	    new_height = jQuery('#message').height();
+
+		if (jW.width() < jQuery('#message').width()) {
+			new_width = jW.width() - 100;
+		}
+		if (jW.height() < jQuery('#message').height()) {
+			new_height = jW.height() - 100;
+			jQuery('#message').css('height', new_height);
+		}
+
+		jQuery('#' + popover.divname ).width(new_width);
+		jQuery('#' + popover.divname ).height(new_height + 20);
 
 		jQuery('#' + popover.divname ).css('top', (jQuery(window).height() / 2) - (jQuery('#message').height() / 2) );
 		jQuery('#' + popover.divname).css('left', (jQuery(window).width() / 2) - (jQuery('#message').width() / 2) );
@@ -58,6 +73,9 @@ function po_loadMessageBox( ) {
 	jQuery('#closebox').click(po_removeMessageBox);
 
 	jQuery('#message').hover( function() {jQuery('.claimbutton').removeClass('hide');}, function() {jQuery('.claimbutton').addClass('hide');});
+	setTimeout(function (){
+		jQuery('#message').height(new_height);
+	}, 1000);
 
 }
 
