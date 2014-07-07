@@ -113,11 +113,9 @@ add_action( 'template_redirect', 'prefix_url_rewrite_templates' );
 add_filter( 'wp_title', 'og_title', 20 );
 function og_title($title) {
     global $event_slug, $this_event;
-    if ($event_slug === ""){
-        $title = wp_title();
-    } else {
+    if ($event_slug !== null && $event_slug !== "") {
         $this_event = getThisEvent($event_slug);
-        $title = $this_event -> title . " | Imbibe Events";
+        $title = $this_event -> title . " | $title";
     }
 
     return $title;
