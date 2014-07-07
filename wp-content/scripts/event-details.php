@@ -13,7 +13,7 @@
 
 <?php
 
-// todo - probably make getter functions to ensure data exists and doens't break site
+// todo - probably make getter functions to ensure data exists and doesn't break site
 
       $start_time = strtotime($this_event -> start_time);
       $address = $this_event -> addresses[0];
