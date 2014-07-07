@@ -37,7 +37,7 @@ get_header(); ?>
     <div id="ticketing-header">
         <div id="ticketing-content">
             <h2>Online solutions for craft events</h2>
-            <p>Exclusive event ticketing & management for local events involving craft beer, spirits, and food.</p>
+            <p>Exclusive event ticketing & management for local events involving craft beer, spirits, and more!</p>
             <div class="ticketing-button"><a href="http://imbibe.nightout.com/signup">Create an event</a></div>
         </div>
     </div>
@@ -83,7 +83,7 @@ get_header(); ?>
 
             </div>
 
-            <div class="integration-type" style="background-color: #CECECE; color: black;">
+            <div class="integration-type" style="background-color: #41BAA0; color: black;">
                 <img src="/wp-content/imbibe-images/example-events-everywhere.png" />
                 <p class="integration-title"><strong>Events</strong> Everywhere</p>
                 <p>Place a list of your upcoming events directly onto your website or blog.</p>
@@ -204,12 +204,33 @@ get_header(); ?>
 
 
     </div>
+    <div id="pricing">
+        <h2>Imbibe's Service Fee</h2>
+        <p>For each ticket you sell Imbibe charges 2% of the ticket price plus $0.99 per ticket sold.</p>
+        <div class="grid col-300">
+            <h4>Credit Card Processing Fee</h4>
+            <p> When you sell tickets on Imbibe the payment is processed through our merchant processor for which we charge 3% of the ticket value.</p>
+            <p>We leave it up to you how you want to pay the fee. You can absorb the fee into your ticket price or pass the fee along to the buyer as an added "fee" when they purchase their ticket.</p>
+        </div>
+        <div class="grid col-300">
+            <h4>How You Get Paid</h4>
+            <p>We generally send your funds via check or direct deposit five days after your event is over. We can also work with you on custom payout terms to better meet your needs.</p>
+        </div>
+        <div class="grid col-300">
+            <h4>Need to Knows</h4>
+            <ul>
+                <li>We accept all major credit cards for your buyer's convenience.</li>
+                <li>There is no cost or set up time.</li>
+                <li>We are 100% PCI compliant. <br />(<a href="http://stripe.com">More about our merchant processor Stripe</a>)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
 
     <div id="get-started">
         <h2>Ready to get started?</h2>
         <p>Sign up now and get instant access</p>
-        <div class="ticketing-button" style="background-color: #CBB374; color: #8D8D8D;">See Pricing</div>
-        <div class="ticketing-button" style="background-color: #8D8D8D;"><a href="http://imbibe.nightout.com/signup">Start Creating Events</a></div>
+        <div class="ticketing-button"><a href="http://imbibe.nightout.com/signup">Start Creating Events</a></div>
     </div>
 
     <div id="questions">

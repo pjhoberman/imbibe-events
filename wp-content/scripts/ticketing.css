@@ -275,6 +275,26 @@
         color: #555;
     }
 
+    /* Pricing */
+
+    #pricing > p {
+        font-size: 1.2em;
+    }
+
+    #pricing div {
+        width: 30%;
+        float: left;
+    }
+
+    #pricing h4 {
+        text-transform: uppercase;
+        font-size: 1.1em;
+    }
+
+    #pricing ul {
+        padding-left: 1em;
+    }
+
     /* get started */
     #get-started {
         background-color: black;
@@ -302,8 +322,14 @@
         display: inline-block;
         -webkit-border-radius: 3px;
         border-radius: 3px;
-        width: 175px;
+        width: 320px;
+        font-size: 28px;
+        padding: 20px 0;
+        background-color: #8D8D8D;
+    }
 
+    #get-started .ticketing-button:hover {
+        background-color: #49A9E2;
     }
 
     /* questions */
