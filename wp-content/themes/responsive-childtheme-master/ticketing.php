@@ -155,49 +155,49 @@ get_header(); ?>
             <div class="feature promo">
 
                 <h3>Promo Codes</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                <p>Apply a promo code to any or all of your ticket types, set start and end time and limit the total number available and total uses per user.</p>
             </div>
 
             <div class="feature promoters">
 
                 <h3>Invite &amp; Track Promoters</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                <p>Invite unlimited promoters, each with a unique tracking link and personalized dashboard detailing their stats.</p>
             </div>
 
             <div class="feature collaborators">
 
                 <h3>Account Collaborators</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                <p>Invite your team to collaborate on your account(s) and/or event(s).</p>
             </div>
 
             <div class="feature notifications">
 
                 <h3>Automatic Notifications</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                <p>Set and adjust your notification settings to receive sales updates and milestone updates via email. </p>
             </div>
 
             <div class="feature sales-reports">
 
                 <h3>Detailed Sales Reports</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                <p>It's important to know how your finances break down; with our comprehensive sales reports you won't miss a penny.</p>
             </div>
 
             <div class="feature tracking">
 
                 <h3>Custom Tracking Links</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                <p>Create unlimited custom tracking links to track and analyze specific outlets, campaigns and affiliates.</p>
             </div>
 
             <div class="feature subdomain">
 
                 <h3>Custom Event Sub-Domain</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                <p>Choose a custom subdomain when you create your event to enhance your branding and make your event easy to find.</p>
             </div>
 
             <div class="feature payout">
 
                 <h3>Flexible Payout Structure</h3>
-                <p>Lorem ipsum dolor em hiffty port and slinky do. What else can you do?</p>
+                <p>We'll work with you to get your funds in hand when you need them.</p>
             </div>
             <div style="clear: both;">&nbsp;</div>
         </div>
